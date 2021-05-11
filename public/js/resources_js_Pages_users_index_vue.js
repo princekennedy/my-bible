@@ -205,10 +205,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "modal-layout",
   props: {
-    showModal: Boolean
+    showModal: Boolean,
+    title: String,
+    cancelBtn: null,
+    actionBtns: Array
   },
   data: function data() {
     return {};
@@ -216,6 +222,9 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     toggleModal: function toggleModal() {
       this.$emit("toggleModal");
+    },
+    emitting: function emitting(action) {
+      this.$emit(action);
     }
   }
 });
@@ -426,6 +435,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -450,6 +460,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     toggleModal: function toggleModal() {
       this.showModal = !this.showModal;
+    },
+    Save: function Save() {
+      alert("hello");
     }
   },
   mounted: function mounted() {}
@@ -1111,7 +1124,7 @@ var render = function() {
                         "inertia-link",
                         {
                           staticClass:
-                            "relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50",
+                            "relative inline-flex items-center px-2 py-2 rounded-l-md border border-secondary bg-white text-sm font-medium text-gray-500 hover:bg-gray-50",
                           attrs: {
                             href: "javascript:void(0)",
                             "aria-label": "Previous"
@@ -1144,7 +1157,7 @@ var render = function() {
                         key: index,
                         class:
                           _vm.isActive(page) +
-                          " relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-200",
+                          " relative inline-flex items-center px-4 py-2 border border-secondary bg-white text-sm font-medium text-gray-700 hover:text-primary",
                         attrs: { href: "javascript:void(0)" },
                         on: {
                           click: function($event) {
@@ -1162,7 +1175,7 @@ var render = function() {
                         "inertia-link",
                         {
                           staticClass:
-                            "relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50",
+                            "relative inline-flex items-center px-2 py-2 rounded-r-md border border-secondary bg-white text-sm font-medium text-gray-500 hover:bg-gray-50",
                           attrs: {
                             href: "javascript:void(0)",
                             "aria-label": "Next"
@@ -1207,7 +1220,7 @@ var staticRenderFns = [
         "a",
         {
           staticClass:
-            "relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:text-gray-500",
+            "relative inline-flex items-center px-4 py-2 border border-secondary text-sm font-medium rounded-md text-gray-700 bg-white hover:text-gray-500",
           attrs: { href: "#" }
         },
         [_vm._v("\n        Previous\n      ")]
@@ -1217,7 +1230,7 @@ var staticRenderFns = [
         "a",
         {
           staticClass:
-            "ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:text-gray-500",
+            "ml-3 relative inline-flex items-center px-4 py-2 border border-secondary text-sm font-medium rounded-md text-gray-700 bg-white hover:text-gray-500",
           attrs: { href: "#" }
         },
         [_vm._v("\n        Next\n      ")]
@@ -1303,82 +1316,121 @@ var render = function() {
               "overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex m-2"
           },
           [
-            _c(
-              "div",
-              { staticClass: "relative w-auto my-6 mx-auto max-w-3xl" },
-              [
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "flex items-start justify-between p-3 border-b border-solid border-blueGray-200 rounded-t"
-                      },
-                      [
-                        _c("h3", { staticClass: " font-semibold w-full" }, [
-                          _vm._v("\n            Modal Title\n              "),
+            _c("div", { staticClass: "relative w-auto  mx-auto max-w-3xl" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+                },
+                [
+                  _vm.title
+                    ? _c(
+                        "div",
+                        {
+                          staticClass:
+                            " justify-between border-b p-2 border-solid border-blueGray-200 rounded-t"
+                        },
+                        [
                           _c(
-                            "button",
-                            {
-                              staticClass:
-                                "close round-lg p-2 text-red-500 float-right inset-y-0 right-0 w-16 hover:bg-gray-100 hover:text-red a",
-                              attrs: {
-                                type: "button",
-                                "data-dismiss": "modal",
-                                "aria-label": "Close"
-                              },
-                              on: {
-                                click: function($event) {
-                                  return _vm.toggleModal()
-                                }
-                              }
-                            },
+                            "h3",
+                            { staticClass: "p-2 mt-2 font-semibold w-full" },
                             [
-                              _c("span", { attrs: { "aria-hidden": "true" } }, [
-                                _vm._v("×")
-                              ])
+                              _vm._v(
+                                "\n            " +
+                                  _vm._s(_vm.title) +
+                                  "\n              "
+                              ),
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "close round-lg text-red-500 float-right inset-y-0 p-2  hover:bg-gray-100 hover:text-red a",
+                                  attrs: {
+                                    type: "button",
+                                    "data-dismiss": "modal",
+                                    "aria-label": "Close"
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.toggleModal()
+                                    }
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "span",
+                                    { attrs: { "aria-hidden": "true" } },
+                                    [_vm._v("×")]
+                                  )
+                                ]
+                              )
                             ]
                           )
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _vm._t("default"),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "flex items-center justify-end p-3 border-t border-solid border-blueGray-200 rounded-b"
-                      },
-                      [
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "text-green-500 bg-transparent border border-solid border-green-500 hover:bg-green-500 hover:text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                return _vm.toggleModal()
-                              }
-                            }
-                          },
-                          [_vm._v("\n            Save Changes\n          ")]
-                        )
-                      ]
-                    )
-                  ],
-                  2
-                )
-              ]
-            )
+                        ]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm._t("default"),
+                  _vm._v(" "),
+                  _vm.cancelBtn || _vm.actionBtns
+                    ? _c(
+                        "div",
+                        {
+                          staticClass:
+                            "flex items-center justify-end p-2 border-t border-solid border-blueGray-200 rounded-b"
+                        },
+                        [
+                          _vm._l(_vm.actionBtns, function(btn, index) {
+                            return _vm.actionBtns
+                              ? _c(
+                                  "button",
+                                  {
+                                    key: index,
+                                    staticClass:
+                                      "text-primary bg-transparent border border-solid border-primary hover:bg-primary hover:text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
+                                    attrs: { type: "button" },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.emitting(btn)
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n            " +
+                                        _vm._s(btn) +
+                                        "\n          "
+                                    )
+                                  ]
+                                )
+                              : _vm._e()
+                          }),
+                          _vm._v(" "),
+                          _vm.cancelBtn
+                            ? _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "text-white border border-solid  bg-red-400  hover:bg-red-500 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150",
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.toggleModal()
+                                    }
+                                  }
+                                },
+                                [_vm._v("\n            Cancel\n          ")]
+                              )
+                            : _vm._e()
+                        ],
+                        2
+                      )
+                    : _vm._e()
+                ],
+                2
+              )
+            ])
           ]
         )
       : _vm._e(),
@@ -1938,8 +1990,12 @@ var render = function() {
       _c(
         "ModalLayout",
         {
-          attrs: { showModal: _vm.showModal },
-          on: { toggleModal: _vm.toggleModal }
+          attrs: {
+            actionBtns: ["Save"],
+            title: "Add User",
+            showModal: _vm.showModal
+          },
+          on: { Save: _vm.Save, toggleModal: _vm.toggleModal }
         },
         [
           _c("div", { staticClass: "relative p-6 flex-auto" }, [
@@ -1974,7 +2030,7 @@ var render = function() {
                     "span",
                     {
                       staticClass:
-                        " p-3 text-green-400 hover:text-green-600 hover:font-medium fa fa-plus float-right cursor-pointer",
+                        " p-3 text-green-400 hover:text-primary hover:font-medium fa fa-plus float-right cursor-pointer",
                       on: {
                         click: function($event) {
                           return _vm.toggleModal()
@@ -2006,7 +2062,7 @@ var render = function() {
                             {
                               key: index,
                               staticClass:
-                                "bg-green-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0"
+                                "text-primary flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0"
                             },
                             [
                               _c("th", { staticClass: "p-3 text-left" }, [
@@ -2093,7 +2149,7 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("span", {
                                     staticClass:
-                                      "hover:bg-gray-100 p-3 text-green-400 hover:text-green-600 hover:font-medium fa fa-edit float-right cursor-pointer"
+                                      "hover:bg-gray-100 p-3 text-green-400 hover:text-primary hover:font-medium fa fa-edit float-right cursor-pointer"
                                   })
                                 ]
                               )

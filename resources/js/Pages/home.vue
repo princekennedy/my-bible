@@ -12,13 +12,16 @@
                     <div class="bg-white border rounded shadow p-2" @click="callLink(card.link)">
                         <div class="flex flex-row items-center">
                             <div class="flex-shrink pr-4">
-                                <div class="rounded p-3 bg-primary bg-opacity-20"><i :class=" card.icon + 'fa-2x fa-fw fa-inverse'"></i></div>
+                                <div class="rounded p-3 text-primary bg-opacity-20">
+                                <i :class=" card.icon + 'fa-2x fa-fw fa-inverse text-primary'"></i></div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-500">
                                      {{ card.name }}
                                 </h5>
-                                <h3 class="font-bold text-3xl">  {{ card.total }} <span class="text-primary"><i class="fas fa-caret-up"></i></span></h3>
+                                <h3 class="font-bold text-3xl">  {{ card.total }} 
+                                    <!-- <span class="text-primary"><i class="fas fa-caret-up"></i></span> -->
+                                </h3>
                             </div>
                         </div>
                     </div>
@@ -40,7 +43,7 @@
                         
                         <table class="w-full flex flex-row flex-no-wrap sm:bg-white rounded overflow-hidden sm:shadow-lg my-5">
                             <thead class="text-white">
-                                <tr  v-for="(user, index) in users.data" v-bind:key="index" class="bg-primary flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                                <tr  v-for="(user, index) in users.data" v-bind:key="index" class="text-primary flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                                     <th class="p-3 text-left w-10"> Position </th>
                                     <th class="p-3 text-left"> Name </th>
                                     <th class="p-3 text-left"> Place</th>

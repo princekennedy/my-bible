@@ -8,13 +8,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Traits\CreatedUpdatedTrait;
+use App\Traits\ActiveConfigTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
     use HasFactory, SoftDeletes, 
         Notifiable, HasApiTokens, 
-        CreatedUpdatedTrait;
+        CreatedUpdatedTrait, ActiveConfigTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -59,6 +60,21 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(Role::class);
+    }
+
+    public function activeConfig()
+    {
+        return $this->hasMany(ActiveConfig::class, 'created_by');
+    }   
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class, 'status_id' ,'id');
+    }
+
+    public function activeCompany(){
+        $this->activeCompany = \Facades\App\Cache\Users::getActiveCompany();
+        return $this->activeCompany;
     }
 
 

@@ -14,7 +14,7 @@
 
                         <table class="w-full flex flex-row flex-no-wrap sm:bg-white rounded overflow-hidden sm:shadow-lg my-5">
                             <thead class="text-white">
-                                <tr  v-for="(company, index) in companies.data" v-bind:key="index" class="bg-primary flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                                <tr  v-for="(company, index) in companies.data" v-bind:key="index" class="text-primary flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                                     <th class="p-3 text-left"> Name </th>
                                     <th class="p-3 text-left"> Desscription</th>
                                     <th class="p-3 text-left"> Created At </th>

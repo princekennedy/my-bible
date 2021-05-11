@@ -837,7 +837,7 @@ var render = function() {
                         "inertia-link",
                         {
                           staticClass:
-                            "relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50",
+                            "relative inline-flex items-center px-2 py-2 rounded-l-md border border-secondary bg-white text-sm font-medium text-gray-500 hover:bg-gray-50",
                           attrs: {
                             href: "javascript:void(0)",
                             "aria-label": "Previous"
@@ -870,7 +870,7 @@ var render = function() {
                         key: index,
                         class:
                           _vm.isActive(page) +
-                          " relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-200",
+                          " relative inline-flex items-center px-4 py-2 border border-secondary bg-white text-sm font-medium text-gray-700 hover:text-primary",
                         attrs: { href: "javascript:void(0)" },
                         on: {
                           click: function($event) {
@@ -888,7 +888,7 @@ var render = function() {
                         "inertia-link",
                         {
                           staticClass:
-                            "relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50",
+                            "relative inline-flex items-center px-2 py-2 rounded-r-md border border-secondary bg-white text-sm font-medium text-gray-500 hover:bg-gray-50",
                           attrs: {
                             href: "javascript:void(0)",
                             "aria-label": "Next"
@@ -933,7 +933,7 @@ var staticRenderFns = [
         "a",
         {
           staticClass:
-            "relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:text-gray-500",
+            "relative inline-flex items-center px-4 py-2 border border-secondary text-sm font-medium rounded-md text-gray-700 bg-white hover:text-gray-500",
           attrs: { href: "#" }
         },
         [_vm._v("\n        Previous\n      ")]
@@ -943,7 +943,7 @@ var staticRenderFns = [
         "a",
         {
           staticClass:
-            "ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:text-gray-500",
+            "ml-3 relative inline-flex items-center px-4 py-2 border border-secondary text-sm font-medium rounded-md text-gray-700 bg-white hover:text-gray-500",
           attrs: { href: "#" }
         },
         [_vm._v("\n        Next\n      ")]

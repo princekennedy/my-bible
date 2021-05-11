@@ -63,6 +63,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     error: null,
@@ -197,7 +199,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _vm.error
-              ? _c("p", { staticClass: "text-red-300" }, [
+              ? _c("div", { staticClass: "text-center text-red-400 mb-6" }, [
                   _vm._v(_vm._s(_vm.error) + " ")
                 ])
               : _vm._e(),
@@ -214,7 +216,7 @@ var render = function() {
                     _c(
                       "svg",
                       {
-                        staticClass: "fill-current text-gray-500 w-4 h-4",
+                        staticClass: "fill-current text-primary w-4 h-4",
                         attrs: {
                           xmlns: "http://www.w3.org/2000/svg",
                           viewBox: "0 0 20 20"
@@ -272,7 +274,7 @@ var render = function() {
                     _c(
                       "svg",
                       {
-                        staticClass: "fill-current text-gray-500 w-4 h-4",
+                        staticClass: "fill-current text-primary w-4 h-4",
                         attrs: {
                           xmlns: "http://www.w3.org/2000/svg",
                           viewBox: "0 0 20 20"
@@ -321,13 +323,30 @@ var render = function() {
               _vm._v(" "),
               _vm._m(1),
               _vm._v(" "),
-              _vm._m(2),
+              _c("div", { staticClass: "mb-4" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "text-sm text-gray-600",
+                    attrs: { for: "remember" }
+                  },
+                  [
+                    _vm._v("Don`t have accout?. \n                    "),
+                    _c(
+                      "inertia-link",
+                      { staticClass: "text-sm", attrs: { href: "/register" } },
+                      [_vm._v("Click here")]
+                    )
+                  ],
+                  1
+                )
+              ]),
               _vm._v(" "),
               _c(
                 "button",
                 {
                   staticClass:
-                    "bg-indigo-600 block mx-auto text-white text-sm uppercase rounded shadow-md px-6 py-2"
+                    "bg-primary block mx-auto text-white text-sm uppercase rounded shadow-md px-6 py-2"
                 },
                 [_vm._v("Sign in")]
               )
@@ -361,23 +380,6 @@ var staticRenderFns = [
         "label",
         { staticClass: "text-sm text-gray-600", attrs: { for: "remember" } },
         [_vm._v("Remember me")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mb-4" }, [
-      _c(
-        "label",
-        { staticClass: "text-sm text-gray-600", attrs: { for: "remember" } },
-        [
-          _vm._v("Don`t have accout?. \n                    "),
-          _c("a", { staticClass: "text-sm", attrs: { href: "/register" } }, [
-            _vm._v("Click here")
-          ])
-        ]
       )
     ])
   }

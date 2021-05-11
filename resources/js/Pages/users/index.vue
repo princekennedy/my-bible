@@ -1,6 +1,6 @@
 <template>
     <AppLayout>
-        <ModalLayout :showModal="showModal" @toggleModal="toggleModal">
+        <ModalLayout :actionBtns="['Save']"  title="Add User" @Save="Save" :showModal="showModal" @toggleModal="toggleModal">
             <div class="relative p-6 flex-auto">
                 <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
                 I always felt like I could do anything. That’s the main
@@ -25,7 +25,8 @@
 
                         <table class="w-full flex flex-row flex-no-wrap sm:bg-white rounded overflow-hidden sm:shadow-lg my-5">
                             <thead class="text-white">
-                                <tr  v-for="(user, index) in users.data" v-bind:key="index" class="bg-primary flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                                <tr  v-for="(user, index) in users.data" v-bind:key="index" 
+                                    class="text-primary flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                                     <th class="p-3 text-left"> Name </th>
                                     <th class="p-3 text-left"> Email</th>
                                     <th class="p-3 text-left"> Created At </th>
@@ -81,7 +82,10 @@ export default{
         },
         toggleModal(){
             this.showModal = !this.showModal;
-        }
+        },
+        Save(){
+            alert("hello")
+        },
     },
 
     mounted(){

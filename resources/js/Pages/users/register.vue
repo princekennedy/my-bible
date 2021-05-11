@@ -2,7 +2,7 @@
 
     <div class="max-w-md mx-auto mt-4 bg-white shadow rounded my-8">
         <form  method="POST" @submit.prevent="save">
-            <div class="text-center text-gray-600 py-4"><b>Sign Up with cc</b></div>
+            <div class="text-center text-gray-600 py-4"><b>Create Account</b></div>
             <p v-if="message" class="p-1 m-1 text-white bg-primary text-center"> <span class="p-1">{{ message }} </span></p>
             <div class="bg-gray-200 pt-8 pb-16">
                 <div class="w-4/5 mx-auto">
@@ -28,10 +28,10 @@
 
                     <div class="mb-4">
                         <label for="remember" class="text-sm text-gray-600">Already have an account?. 
-                            <a href="/login" class="text-sm ">Click here</a> 
+                            <inertia-link href="/login" class="text-sm ">Click here</inertia-link> 
                         </label>
                     </div>
-                    <button type="save" class="bg-indigo-600 block mx-auto text-white text-sm uppercase rounded shadow-md px-6 py-2">Sign up</button>
+                    <button type="save" class="bg-primary block mx-auto text-white text-sm uppercase rounded shadow-md px-6 py-2">Sign up</button>
                 </div>
             </div>
         </form>

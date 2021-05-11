@@ -350,13 +350,32 @@ var render = function() {
                   ])
                 : _vm._e(),
               _vm._v(" "),
-              _vm._m(1),
+              _c("div", { staticClass: "mb-4" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "text-sm text-gray-600",
+                    attrs: { for: "remember" }
+                  },
+                  [
+                    _vm._v(
+                      "Already have an account?. \n                        "
+                    ),
+                    _c(
+                      "inertia-link",
+                      { staticClass: "text-sm ", attrs: { href: "/login" } },
+                      [_vm._v("Click here")]
+                    )
+                  ],
+                  1
+                )
+              ]),
               _vm._v(" "),
               _c(
                 "button",
                 {
                   staticClass:
-                    "bg-indigo-600 block mx-auto text-white text-sm uppercase rounded shadow-md px-6 py-2",
+                    "bg-primary block mx-auto text-white text-sm uppercase rounded shadow-md px-6 py-2",
                   attrs: { type: "save" }
                 },
                 [_vm._v("Sign up")]
@@ -374,24 +393,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-center text-gray-600 py-4" }, [
-      _c("b", [_vm._v("Sign Up with cc")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mb-4" }, [
-      _c(
-        "label",
-        { staticClass: "text-sm text-gray-600", attrs: { for: "remember" } },
-        [
-          _vm._v("Already have an account?. \n                        "),
-          _c("a", { staticClass: "text-sm ", attrs: { href: "/login" } }, [
-            _vm._v("Click here")
-          ])
-        ]
-      )
+      _c("b", [_vm._v("Create Account")])
     ])
   }
 ]
