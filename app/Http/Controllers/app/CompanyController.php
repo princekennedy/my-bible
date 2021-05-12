@@ -5,6 +5,7 @@ namespace App\Http\Controllers\app;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Facades\App\Cache\CompanyCache;
+use App\Models\Company;
 
 class CompanyController extends Controller
 {
@@ -37,7 +38,13 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = request()->validate([
+            "name" => ["required", "unique:companies"],
+            "description" => ["required"],
+        ]);
+        $company = Company::create($validated);
+        session()->flash('message' , ($company) ? "Company created sucessfully" : " Company Already exist");
+        return redirect()->back();
     }
 
     /**
@@ -69,9 +76,15 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Company $company)
     {
-        //
+        $validated = request()->validate([
+            "name" => ["required"],
+            "description" => ["required"],
+        ]);
+        $company = $company->update($validated);
+        session()->flash('message' , "Company Updated sucessfully");
+        return redirect()->back();
     }
 
     /**
@@ -80,8 +93,23 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Company $company){
+        $company->delete();
+        session()->flash('message' , "Company Disabled sucessfully");
+        return redirect()->back();
+    }
+
+    public function destroy(Company $company)
     {
-        //
+        $company->delete();
+        session()->flash('message' , "Company Disabled sucessfully");
+        return redirect()->back();
+    }
+    public function changeCompany(Company $company){
+        auth()->user()->setConfig([ 
+            "key" => "company", 
+            "value" => $company->id 
+        ]);
+        return redirect()->back();
     }
 }

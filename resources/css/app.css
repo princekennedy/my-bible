@@ -2,29 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
-  
-  /* In your CSS */
-  :root {
-    --color-primary: #D97706;
-    --color-secondary: #F6E05E;
-    --background-primary: #D97706;
-    --background-secondary: #F6E05E;
-    --border-primary: #D97706;
-    --border-secondary: #F6E05E;
-  }
+	/* In your CSS */
+	:root {
+		--color-primary: #d97706;
+		--color-secondary: #f6e05e;
+		--background-primary: #d97706;
+		--background-secondary: #f6e05e;
+		--border-primary: #d97706;
+		--border-secondary: #f6e05e;
+	}
 
-  /* In your CSS */
-  .theme-dark {
-    --color-primary: #D97706;
-    --color-secondary: #F6E05E;
-    --background-primary: #1F2937;
-    --background-secondary: #374151;
-    --border-primary: #D97706;
-    --border-secondary: #F6E05E;
-  }
+	/* In your CSS */
+	.theme-dark {
+		--color-primary: #d97706;
+		--color-secondary: #f6e05e;
+		--background-primary: #1f2937;
+		--background-secondary: #374151;
+		--border-primary: #d97706;
+		--border-secondary: #f6e05e;
+	}
 }
+
 /* 
 50
 #FFFBEB
@@ -46,8 +45,6 @@
 #92400E
 900
 #78350F */
-
-
 
 /* 50
 #F9FAFB

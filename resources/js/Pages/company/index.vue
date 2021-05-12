@@ -43,7 +43,10 @@
                                 Desscription
                                 </th>
                                 <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                Created At
+                               
+                                </th>
+                                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                     Created At
                                 </th>
                                 <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                 
@@ -53,13 +56,23 @@
                             <tbody>
                             <tr v-for="(company, index) in companies.data" v-bind:key="index">
                                 <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2 text-left">
-                                {{ company.name }} 
+                                    {{ company.name }} 
                                 </th>
                                 <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
-                                {{ company.description }} 
+                                    {{ company.description }} 
                                 </td>
                                 <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
-                                {{ company.created_at }}
+ 
+                                    <div class="flex items-center mr-4 mb-4">
+                                        <input :id="index" type="radio" v-on:change="activeCompany(company.id)" name="radio" class="hidden" />
+                                        <label :for="index" class="flex items-center cursor-pointer">
+                                            <span class="w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink"></span>
+                                        </label>
+                                    </div>
+
+                                </td>
+                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                    {{ company.created_at }}
                                 </td>
                                 <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
                                     <span v-on:click="deleteCompany(company.id)" class="hover:bg-gray-100 p-3 text-red-200 hover:text-red-400 hover:font-medium fa fa-trash ml-4 float-right cursor-pointer"> </span>
@@ -131,8 +144,12 @@ export default{
             this.$inertia.post('/delete-company/'+ company_id)
         },
 
+        activeCompany(company_id){
+            this.$inertia.post('/change-company/'+ company_id)
+        },
+
         Save(){
-            var link = (this.company) ? '/update-company' + this.company.id : '/company';
+            var link = (this.company) ? '/update-company/' + this.company.id : '/company';
             this.$inertia.post( link, this.form, {
                 onSuccess: (res) => {
                     if(Object.keys(this.errors).length <= 0) this.toggleModal();            

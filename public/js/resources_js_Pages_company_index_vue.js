@@ -98,6 +98,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -144,10 +157,13 @@ __webpack_require__.r(__webpack_exports__);
     deleteCompany: function deleteCompany(company_id) {
       this.$inertia.post('/delete-company/' + company_id);
     },
+    activeCompany: function activeCompany(company_id) {
+      this.$inertia.post('/change-company/' + company_id);
+    },
     Save: function Save() {
       var _this = this;
 
-      var link = this.company ? '/update-company' + this.company.id : '/company';
+      var link = this.company ? '/update-company/' + this.company.id : '/company';
       this.$inertia.post(link, this.form, {
         onSuccess: function onSuccess(res) {
           if (Object.keys(_this.errors).length <= 0) _this.toggleModal();
@@ -618,7 +634,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* \r\n  @media (min-width: 640px) {\r\n    table {\r\n      display: inline-table !important;\r\n    }\r\n\r\n    thead tr:not(:first-child) {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  td:not(:last-child) {\r\n    border-bottom: 0;\r\n  }\r\n\r\n  th:not(:last-child) {\r\n    border-bottom: 2px solid rgba(0, 0, 0, .1);\r\n  } */\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* \r\n  @media (min-width: 640px) {\r\n    table {\r\n      display: inline-table !important;\r\n    }\r\n\r\n    thead tr:not(:first-child) {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  td:not(:last-child) {\r\n    border-bottom: 0;\r\n  }\r\n\r\n  th:not(:last-child) {\r\n    border-bottom: 2px solid rgba(0, 0, 0, .1);\r\n  } */\r\n\r\ninput[type=\"radio\"] + label span {\r\n\ttransition: background .2s, transform .2s;\r\n}\r\n\r\ninput[type=\"radio\"] + label span:hover,\r\ninput[type=\"radio\"] + label:hover span {\r\n\ttransform: scale(1.2);\r\n}\r\n\r\ninput[type=\"radio\"]:checked + label span {\r\n\tbackground-color: #3490dc;\r\n\tbox-shadow: 0px 0px 0px 2px white inset;\r\n}\r\n\r\ninput[type=\"radio\"]:checked + label {\r\n\tcolor: #3490dc;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1515,6 +1531,11 @@ var render = function() {
                             ]
                           ),
                           _vm._v(" "),
+                          _c("th", {
+                            staticClass:
+                              "px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                          }),
+                          _vm._v(" "),
                           _c(
                             "th",
                             {
@@ -1523,7 +1544,7 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                            Created At\n                            "
+                                "\n                                 Created At\n                            "
                               )
                             ]
                           ),
@@ -1547,7 +1568,7 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                            " +
+                                  "\n                                " +
                                     _vm._s(company.name) +
                                     " \n                            "
                                 )
@@ -1562,7 +1583,7 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                            " +
+                                  "\n                                " +
                                     _vm._s(company.description) +
                                     " \n                            "
                                 )
@@ -1576,8 +1597,54 @@ var render = function() {
                                   "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
                               },
                               [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "flex items-center mr-4 mb-4"
+                                  },
+                                  [
+                                    _c("input", {
+                                      staticClass: "hidden",
+                                      attrs: {
+                                        id: index,
+                                        type: "radio",
+                                        name: "radio"
+                                      },
+                                      on: {
+                                        change: function($event) {
+                                          return _vm.activeCompany(company.id)
+                                        }
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "label",
+                                      {
+                                        staticClass:
+                                          "flex items-center cursor-pointer",
+                                        attrs: { for: index }
+                                      },
+                                      [
+                                        _c("span", {
+                                          staticClass:
+                                            "w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink"
+                                        })
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              {
+                                staticClass:
+                                  "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                              },
+                              [
                                 _vm._v(
-                                  "\n                            " +
+                                  "\n                                " +
                                     _vm._s(company.created_at) +
                                     "\n                            "
                                 )
@@ -2249,7 +2316,7 @@ var staticRenderFns = [
       "footer",
       { staticClass: "bg-white border-t border-gray-400 shadow" },
       [
-        _c("div", { staticClass: "container max-w-md mx-auto flex py-8" }, [
+        _c("div", { staticClass: "container max-w-md flex py-8" }, [
           _c("div", { staticClass: "w-full mx-auto flex flex-wrap" }, [
             _c("div", { staticClass: "flex w-full md:w-1/2 " }, [
               _c("div", { staticClass: "px-8" }, [

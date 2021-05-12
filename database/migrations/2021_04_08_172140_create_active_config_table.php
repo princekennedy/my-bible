@@ -17,13 +17,11 @@ class CreateActiveConfigTable extends Migration
             $table->increments('id')->unsigned();
             $table->string('key');
             $table->text('value');
-            $table->unsignedInteger('company_id');
             $table->unsignedInteger('created_by')->nullable();
             $table->unsignedInteger('updated_by')->nullable();
             $table->timestamps();
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('updated_by')->references('id')->on('users');
-            $table->foreign('company_id')->references('id')->on('companies');
         });
     }
 

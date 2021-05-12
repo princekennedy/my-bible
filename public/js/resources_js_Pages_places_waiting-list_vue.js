@@ -1067,7 +1067,7 @@ var staticRenderFns = [
       "footer",
       { staticClass: "bg-white border-t border-gray-400 shadow" },
       [
-        _c("div", { staticClass: "container max-w-md mx-auto flex py-8" }, [
+        _c("div", { staticClass: "container max-w-md flex py-8" }, [
           _c("div", { staticClass: "w-full mx-auto flex flex-wrap" }, [
             _c("div", { staticClass: "flex w-full md:w-1/2 " }, [
               _c("div", { staticClass: "px-8" }, [

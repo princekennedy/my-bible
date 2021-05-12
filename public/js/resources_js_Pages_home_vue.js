@@ -538,7 +538,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* \r\n  @media (min-width: 640px) {\r\n    table {\r\n      display: inline-table !important;\r\n    }\r\n\r\n    thead tr:not(:first-child) {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  td:not(:last-child) {\r\n    border-bottom: 0;\r\n  }\r\n\r\n  th:not(:last-child) {\r\n    border-bottom: 2px solid rgba(0, 0, 0, .1);\r\n  } */\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* \r\n  @media (min-width: 640px) {\r\n    table {\r\n      display: inline-table !important;\r\n    }\r\n\r\n    thead tr:not(:first-child) {\r\n      display: none;\r\n    }\r\n  }\r\n\r\n  td:not(:last-child) {\r\n    border-bottom: 0;\r\n  }\r\n\r\n  th:not(:last-child) {\r\n    border-bottom: 2px solid rgba(0, 0, 0, .1);\r\n  } */\r\n\r\ninput[type=\"radio\"] + label span {\r\n\ttransition: background .2s, transform .2s;\r\n}\r\n\r\ninput[type=\"radio\"] + label span:hover,\r\ninput[type=\"radio\"] + label:hover span {\r\n\ttransform: scale(1.2);\r\n}\r\n\r\ninput[type=\"radio\"]:checked + label span {\r\n\tbackground-color: #3490dc;\r\n\tbox-shadow: 0px 0px 0px 2px white inset;\r\n}\r\n\r\ninput[type=\"radio\"]:checked + label {\r\n\tcolor: #3490dc;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1868,7 +1868,7 @@ var staticRenderFns = [
       "footer",
       { staticClass: "bg-white border-t border-gray-400 shadow" },
       [
-        _c("div", { staticClass: "container max-w-md mx-auto flex py-8" }, [
+        _c("div", { staticClass: "container max-w-md flex py-8" }, [
           _c("div", { staticClass: "w-full mx-auto flex flex-wrap" }, [
             _c("div", { staticClass: "flex w-full md:w-1/2 " }, [
               _c("div", { staticClass: "px-8" }, [

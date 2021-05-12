@@ -42,5 +42,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
 
     // company
     Route::resource('company', App\Http\Controllers\app\CompanyController::class);     
-
+    Route::post('/delete-company/{company}', [App\Http\Controllers\app\CompanyController::class, "delete"]); 
+    Route::post('/update-company/{company}', [App\Http\Controllers\app\CompanyController::class, "update"]); 
+    Route::post('/change-company/{company}', [App\Http\Controllers\app\CompanyController::class, "changeCompany"]); 
 });
