@@ -1,44 +1,66 @@
 <template>
     <AppLayout>
-        <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
 
-            <div class="bread-crump shadow m-3 bg-white">
-                <div class="rounded m-3 p-2">
-                    <h5 class="font-bold uppercase text-gray-600  p-2">
+        <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+            <Message :message="message"/>
+            <div class="w-full ">
+                <div class="border-b p-3 bg-white">
+                    <h5 class="font-bold uppercase text-gray-600">
                         DEPO LIST
-                        <span class=" text-primary hover:text-primary hover:font-medium fa fa-plus float-right cursor-pointer"> Add </span>
+                        <span v-on:click="toggleModal()" class="mt-1 text-green-400 hover:text-primary hover:font-medium fa fa-plus float-right cursor-pointer"> Add </span>
                     </h5>
                 </div>
-            </div>
-            <!--Console Content-->
-            <div class="flex flex-wrap">
-                <div  v-for="(place, index) in places.data" v-bind:key="index" class="w-full  cursor-pointer md:w-1/2 xl:w-1/3 p-3">
-                    <!--Metric place-->
-                    <div class="bg-white border rounded shadow p-2">
-                        <div class="flex flex-row items-center">
-                            <div class="flex-shrink pr-4">
-                                <div class="rounded p-3">
-                                <i class="text-primary fa fa-wallet fa-2x fa-fw fa-inverse"></i></div>
-                            </div>
-                            <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-500">
-                                     {{ place.name }}
-                                </h5>
-                                <h5 class="font-bold text-3xl">  
-                                    {{ place.users.length }} 
-                                    <!-- <span class="text-primary"><i class="fas fa-caret-up"></i></span> -->
-                                </h5>
-                            </div>
-                        </div>
+                <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+                    <div class="block w-full overflow-x-auto">
+                    <!-- Projects table -->
+                        <table class="items-center w-full bg-transparent border-collapse">
+                            <thead>
+                            <tr>
+                                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                Name
+                                </th>
+                                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                Description
+                                </th>
+                               <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                Waiting List
+                                </th>
+                                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                Created At
+                                </th>
+                                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr  v-for="(place, index) in places.data" v-bind:key="index">
+                                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2 text-left">
+                                        {{ place.name }} 
+                                    </th>
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                        {{ place.description }}
+                                    </td>
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                        {{ place.users.length }}
+                                    </td>
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                    {{ place.created_at }}
+                                    </td>
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                        <span v-on:click="deletePlace(place.id)" class="hover:bg-gray-100 p-3 text-red-200 hover:text-red-400 hover:font-medium fa fa-trash ml-4 float-right cursor-pointer"> </span>
+                                        <span v-on:click="editPlace(place)" class="hover:bg-gray-100 p-3 text-green-400 hover:text-primary hover:font-medium fa fa-edit float-right cursor-pointer"> </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <!--/Metric place-->
+                    <vue-pagination  :pagination="places" @paginate="getPlaces()" :offset="4"></vue-pagination>
                 </div>
             </div>
-            <div class="bread-crump m-3">
-                <vue-pagination  :pagination="places" @paginate="getPlaces()" :offset="4"></vue-pagination>
-            </div>
-                
         </div>
+
+
     </AppLayout>
 </template>
 

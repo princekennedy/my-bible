@@ -1,40 +1,75 @@
 <template>
     <AppLayout>
+
+        <ModalLayout :actionBtns="['Save']"  title="Company" @Save="Save" :showModal="showModal" @toggleModal="toggleModal">
+            <div class="relative p-6 flex-auto">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                        Name
+                    </label>
+                    <input v-model="form.name" id="name" type="text" placeholder="Company Name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
+                    <Error :simple="true" :message="errors.name" />
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
+                        Description
+                    </label>
+                    <textarea v-model="form.description" id="description" placeholder="Comment" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
+                    </textarea>
+                    <Error :simple="true" :message="errors.description" />
+                </div>
+            </div>
+        </ModalLayout>
+
         <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
-
-            <div class="w-full p-3">
-                <div class="bg-white border rounded shadow">
-                    <div class="border-b p-3">
-                        <h5 class="font-bold uppercase text-gray-600">
-                            COMPANY LIST
-                            <span class=" p-3 text-green-400 hover:text-primary hover:font-medium fa fa-plus float-right cursor-pointer"> Add </span>
-                        </h5>
-                    </div>
-                    <div class="p-2">
-
-                        <table class="w-full flex flex-row flex-no-wrap sm:bg-white rounded overflow-hidden sm:shadow-lg my-5">
-                            <thead class="text-white">
-                                <tr  v-for="(company, index) in companies.data" v-bind:key="index" class="text-primary flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
-                                    <th class="p-3 text-left"> Name </th>
-                                    <th class="p-3 text-left"> Desscription</th>
-                                    <th class="p-3 text-left"> Created At </th>
-                                    <th class="p-3 text-left" width="110px">Action</th>
-                                </tr>
+            <Message :message="message"/>
+            <div class="w-full ">
+                <div class="border-b p-3 bg-white">
+                    <h5 class="font-bold uppercase text-gray-600">
+                        company LIST
+                        <span v-on:click="toggleModal()" class="mt-1 text-green-400 hover:text-primary hover:font-medium fa fa-plus float-right cursor-pointer"> Add </span>
+                    </h5>
+                </div>
+                <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+                    <div class="block w-full overflow-x-auto">
+                    <!-- Projects table -->
+                        <table class="items-center w-full bg-transparent border-collapse">
+                            <thead>
+                            <tr>
+                                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                Name
+                                </th>
+                                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                Desscription
+                                </th>
+                                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                Created At
+                                </th>
+                                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                
+                                </th>
+                            </tr>
                             </thead>
-                            <tbody class="flex-1 sm:flex-none">
-                                <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0" v-for="(company, index) in companies.data" v-bind:key="index" >
-                                    <td class="border-grey-light border hover:bg-gray-100 p-3"> {{ company.name }} </td>
-                                    <td class="border-grey-light border hover:bg-gray-100 p-3 truncate"> {{ company.description }} </td>
-                                    <td class="border-grey-light border hover:bg-gray-100 p-3 truncate"> {{ company.created_at }} </td>
-                                    <td class="border-grey-light border">
-                                        <span class="hover:bg-gray-100 p-3 text-red-200 hover:text-red-400 hover:font-medium fa fa-trash ml-4 float-right cursor-pointer"> </span>
-                                        <span class="hover:bg-gray-100 p-3 text-green-400 hover:text-primary hover:font-medium fa fa-edit float-right cursor-pointer"> </span>
-                                    </td>
-                                </tr>
+                            <tbody>
+                            <tr v-for="(company, index) in companies.data" v-bind:key="index">
+                                <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2 text-left">
+                                {{ company.name }} 
+                                </th>
+                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                {{ company.description }} 
+                                </td>
+                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                {{ company.created_at }}
+                                </td>
+                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                    <span v-on:click="deleteCompany(company.id)" class="hover:bg-gray-100 p-3 text-red-200 hover:text-red-400 hover:font-medium fa fa-trash ml-4 float-right cursor-pointer"> </span>
+                                    <span v-on:click="editCompany(company)" class="hover:bg-gray-100 p-3 text-green-400 hover:text-primary hover:font-medium fa fa-edit float-right cursor-pointer"> </span>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
-                        <vue-pagination  :pagination="companies" @paginate="getCompanys()" :offset="4"></vue-pagination>
                     </div>
+                    <vue-pagination  :pagination="companies" @paginate="getCompanies()" :offset="4"></vue-pagination>
                 </div>
             </div>
         </div>
@@ -48,22 +83,62 @@
 import AppLayout from '../layouts/app-layout';
 import VuePagination from '../components/vue-pagination'
 import style from '../../../css/responsive-table.css'
+import ModalLayout from '../layouts/modal-layout'
+import Message from '../components/message'
+import Error from '../components/error'
 
 export default{
     components: {
         AppLayout,
-        VuePagination
+        VuePagination,
+        ModalLayout,
+        Message,
+        Error
     },
     props:{
-        companies: Object
+        companies: Object,
+        errors: Object,
+        message: String,
     },
     data(){
-        return { }
+        return { 
+            showModal: false,
+            company:Object,
+            form: Object,
+        }
     },
     methods: {
-        getCompanys(){
-            this.$inertia.visit(`/company?page=${this.companys.current_page}`);
-        }
+        getCompanies(){
+            this.$inertia.visit(`/company?page=${this.companies.current_page}`);
+        },
+
+        toggleModal(){
+            this.company = null
+            this.form = {
+                name: null,
+                description: null,
+            };
+            this.showModal = !this.showModal;
+        },
+
+        editCompany(company){
+            this.company = company;
+            this.form = this.company;
+            this.showModal = !this.showModal;
+        },
+
+        deleteCompany(company_id){
+            this.$inertia.post('/delete-company/'+ company_id)
+        },
+
+        Save(){
+            var link = (this.company) ? '/update-company' + this.company.id : '/company';
+            this.$inertia.post( link, this.form, {
+                onSuccess: (res) => {
+                    if(Object.keys(this.errors).length <= 0) this.toggleModal();            
+                }
+            })
+        },
     }
 }
 

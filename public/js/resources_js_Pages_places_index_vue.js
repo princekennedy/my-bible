@@ -274,6 +274,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: {
     user: function user() {
@@ -307,6 +312,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _layouts_app_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../layouts/app-layout */ "./resources/js/Pages/layouts/app-layout.vue");
 /* harmony import */ var _components_vue_pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/vue-pagination */ "./resources/js/Pages/components/vue-pagination.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1357,6 +1384,27 @@ var render = function() {
                     [
                       _c(
                         "inertia-link",
+                        {
+                          class: _vm.active("/roles"),
+                          attrs: { href: "/roles" }
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-id-card fa-fw mr-3" }),
+                          _c("span", { staticClass: "pb-1 md:pb-0 text-sm" }, [
+                            _vm._v("Roles")
+                          ])
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    { staticClass: "mr-6 my-2 md:my-0" },
+                    [
+                      _c(
+                        "inertia-link",
                         { class: _vm.active("#"), attrs: { href: "#" } },
                         [
                           _c("i", {
@@ -1570,103 +1618,218 @@ var render = function() {
           "w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal"
       },
       [
-        _c("div", { staticClass: "bread-crump shadow m-3 bg-white" }, [
-          _c("div", { staticClass: "rounded m-3 p-2" }, [
-            _c(
-              "h5",
-              { staticClass: "font-bold uppercase text-gray-600  p-2" },
-              [
-                _vm._v("\n                    DEPO LIST\n                    "),
+        _c("Message", { attrs: { message: _vm.message } }),
+        _vm._v(" "),
+        _c("div", { staticClass: "w-full " }, [
+          _c("div", { staticClass: "border-b p-3 bg-white" }, [
+            _c("h5", { staticClass: "font-bold uppercase text-gray-600" }, [
+              _vm._v("\n                    DEPO LIST\n                    "),
+              _c(
+                "span",
+                {
+                  staticClass:
+                    "mt-1 text-green-400 hover:text-primary hover:font-medium fa fa-plus float-right cursor-pointer",
+                  on: {
+                    click: function($event) {
+                      return _vm.toggleModal()
+                    }
+                  }
+                },
+                [_vm._v(" Add ")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
+            },
+            [
+              _c("div", { staticClass: "block w-full overflow-x-auto" }, [
                 _c(
-                  "span",
+                  "table",
                   {
                     staticClass:
-                      " text-primary hover:text-primary hover:font-medium fa fa-plus float-right cursor-pointer"
+                      "items-center w-full bg-transparent border-collapse"
                   },
-                  [_vm._v(" Add ")]
-                )
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "flex flex-wrap" },
-          _vm._l(_vm.places.data, function(place, index) {
-            return _c(
-              "div",
-              {
-                key: index,
-                staticClass: "w-full  cursor-pointer md:w-1/2 xl:w-1/3 p-3"
-              },
-              [
-                _c(
-                  "div",
-                  { staticClass: "bg-white border rounded shadow p-2" },
                   [
-                    _c("div", { staticClass: "flex flex-row items-center" }, [
-                      _c("div", { staticClass: "flex-shrink pr-4" }, [
-                        _c("div", { staticClass: "rounded p-3" }, [
-                          _c("i", {
+                    _c("thead", [
+                      _c("tr", [
+                        _c(
+                          "th",
+                          {
                             staticClass:
-                              "text-primary fa fa-wallet fa-2x fa-fw fa-inverse"
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "flex-1 text-right md:text-center" },
-                        [
+                              "px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                          },
+                          [
+                            _vm._v(
+                              "\n                            Name\n                            "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "th",
+                          {
+                            staticClass:
+                              "px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                          },
+                          [
+                            _vm._v(
+                              "\n                            Description\n                            "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "th",
+                          {
+                            staticClass:
+                              "px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                          },
+                          [
+                            _vm._v(
+                              "\n                            Waiting List\n                            "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "th",
+                          {
+                            staticClass:
+                              "px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                          },
+                          [
+                            _vm._v(
+                              "\n                            Created At\n                            "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("th", {
+                          staticClass:
+                            "px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.places.data, function(place, index) {
+                        return _c("tr", { key: index }, [
                           _c(
-                            "h5",
+                            "th",
                             {
-                              staticClass: "font-bold uppercase text-gray-500"
+                              staticClass:
+                                "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2 text-left"
                             },
                             [
                               _vm._v(
-                                "\n                                 " +
+                                "\n                                    " +
                                   _vm._s(place.name) +
-                                  "\n                            "
+                                  " \n                                "
                               )
                             ]
                           ),
                           _vm._v(" "),
-                          _c("h5", { staticClass: "font-bold text-3xl" }, [
-                            _vm._v(
-                              "  \n                                " +
-                                _vm._s(place.users.length) +
-                                " \n                                "
-                            )
-                          ])
-                        ]
-                      )
-                    ])
+                          _c(
+                            "td",
+                            {
+                              staticClass:
+                                "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(place.description) +
+                                  "\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "td",
+                            {
+                              staticClass:
+                                "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(place.users.length) +
+                                  "\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "td",
+                            {
+                              staticClass:
+                                "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                            },
+                            [
+                              _vm._v(
+                                "\n                                " +
+                                  _vm._s(place.created_at) +
+                                  "\n                                "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "td",
+                            {
+                              staticClass:
+                                "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                            },
+                            [
+                              _c("span", {
+                                staticClass:
+                                  "hover:bg-gray-100 p-3 text-red-200 hover:text-red-400 hover:font-medium fa fa-trash ml-4 float-right cursor-pointer",
+                                on: {
+                                  click: function($event) {
+                                    return _vm.deletePlace(place.id)
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass:
+                                  "hover:bg-gray-100 p-3 text-green-400 hover:text-primary hover:font-medium fa fa-edit float-right cursor-pointer",
+                                on: {
+                                  click: function($event) {
+                                    return _vm.editPlace(place)
+                                  }
+                                }
+                              })
+                            ]
+                          )
+                        ])
+                      }),
+                      0
+                    )
                   ]
                 )
-              ]
-            )
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "bread-crump m-3" },
-          [
-            _c("vue-pagination", {
-              attrs: { pagination: _vm.places, offset: 4 },
-              on: {
-                paginate: function($event) {
-                  return _vm.getPlaces()
+              ]),
+              _vm._v(" "),
+              _c("vue-pagination", {
+                attrs: { pagination: _vm.places, offset: 4 },
+                on: {
+                  paginate: function($event) {
+                    return _vm.getPlaces()
+                  }
                 }
-              }
-            })
-          ],
-          1
-        )
-      ]
+              })
+            ],
+            1
+          )
+        ])
+      ],
+      1
     )
   ])
 }

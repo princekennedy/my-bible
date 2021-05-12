@@ -15,7 +15,8 @@ class UserController extends Controller
     
     public function index(){
         $users = UsersCache::getUserPaginate();
-        return Inertia("users/index", compact('users'));
+        $roles = UsersCache::getRoles();
+        return Inertia("users/index", compact('users', 'roles'));
     }
 
     public function store(Request $request){
@@ -25,13 +26,27 @@ class UserController extends Controller
             "lastname" => ["required"],
             "email" => ["required", "unique:users"],
             "password" => ["required"],
+            "roles" => [],
         ]);
         $validated['password'] = Hash::make($validated['password']);
         $user = User::create($validated);
-        return Inertia('users/register', [
-            'message' => ($user) ? "User created sucessfully" : " User Already exist"
+        if( count( _from($validated, "roles") ) ) $user->roles()->sync(_from($validated, "roles"));
+        session()->flash('message' , ($user) ? "User created sucessfully" : " User Already exist");
+        return redirect()->back();
+    }
+
+    public function update(Request $request, User $user){
+        $validated = request()->validate([
+            "firstname" => ["required"],
+            "lastname" => ["required"],
+            "email" => ["required"],
+            "roles" => [],
         ]);
-        
+        if( $request->password ) $validated['password'] = Hash::make($validated['password']);
+        $user->update($validated);
+        if( count( _from($validated, "roles") ) ) $user->roles()->sync(_from($validated, "roles"));
+        session()->flash('message' , "User updated sucessfully");
+        return redirect()->back();
     }
 
     public function register(){
@@ -68,6 +83,10 @@ class UserController extends Controller
         return redirect('/login');
     }
 
-
+    public function delete(User $user){
+        $user->delete();
+        session()->flash('message' , "User deleted sucessfully");
+        return redirect()->back();
+    }
 
 }

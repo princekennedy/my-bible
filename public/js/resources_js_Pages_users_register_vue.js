@@ -55,8 +55,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {},
   props: {
-    message: null,
-    errors: null
+    message: String,
+    errors: String
   },
   data: function data() {
     return {
@@ -189,15 +189,11 @@ var render = function() {
           _vm._m(0),
           _vm._v(" "),
           _vm.message
-            ? _c(
-                "p",
-                { staticClass: "p-1 m-1 text-white bg-primary text-center" },
-                [
-                  _c("span", { staticClass: "p-1" }, [
-                    _vm._v(_vm._s(_vm.message) + " ")
-                  ])
-                ]
-              )
+            ? _c("p", { staticClass: "p-1 m-1 text-white text-center" }, [
+                _c("span", { staticClass: "p-1" }, [
+                  _vm._v(_vm._s(_vm.message) + " ")
+                ])
+              ])
             : _vm._e(),
           _vm._v(" "),
           _c("div", { staticClass: "bg-gray-200 pt-8 pb-16" }, [

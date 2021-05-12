@@ -37839,6 +37839,30 @@ var map = {
 		"./resources/js/Pages/company/index.vue",
 		"resources_js_Pages_company_index_vue"
 	],
+	"./components/error": [
+		"./resources/js/Pages/components/error.vue",
+		"resources_js_Pages_components_error_vue"
+	],
+	"./components/error.vue": [
+		"./resources/js/Pages/components/error.vue",
+		"resources_js_Pages_components_error_vue"
+	],
+	"./components/errors": [
+		"./resources/js/Pages/components/errors.vue",
+		"resources_js_Pages_components_errors_vue"
+	],
+	"./components/errors.vue": [
+		"./resources/js/Pages/components/errors.vue",
+		"resources_js_Pages_components_errors_vue"
+	],
+	"./components/message": [
+		"./resources/js/Pages/components/message.vue",
+		"resources_js_Pages_components_message_vue"
+	],
+	"./components/message.vue": [
+		"./resources/js/Pages/components/message.vue",
+		"resources_js_Pages_components_message_vue"
+	],
 	"./components/vue-pagination": [
 		"./resources/js/Pages/components/vue-pagination.vue",
 		"resources_js_Pages_components_vue-pagination_vue"
@@ -37918,6 +37942,22 @@ var map = {
 	"./places/waiting-list.vue": [
 		"./resources/js/Pages/places/waiting-list.vue",
 		"resources_js_Pages_places_waiting-list_vue"
+	],
+	"./roles": [
+		"./resources/js/Pages/roles/index.vue",
+		"resources_js_Pages_roles_index_vue"
+	],
+	"./roles/": [
+		"./resources/js/Pages/roles/index.vue",
+		"resources_js_Pages_roles_index_vue"
+	],
+	"./roles/index": [
+		"./resources/js/Pages/roles/index.vue",
+		"resources_js_Pages_roles_index_vue"
+	],
+	"./roles/index.vue": [
+		"./resources/js/Pages/roles/index.vue",
+		"resources_js_Pages_roles_index_vue"
 	],
 	"./users": [
 		"./resources/js/Pages/users/index.vue",
@@ -38080,7 +38120,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_auth_login_vue":1,"resources_js_Pages_company_index_vue":1,"resources_js_Pages_components_vue-pagination_vue":1,"resources_js_Pages_home_vue":1,"resources_js_Pages_layouts_app-layout_vue":1,"resources_js_Pages_layouts_modal-layout_vue":1,"resources_js_Pages_parts_footer_vue":1,"resources_js_Pages_parts_header_vue":1,"resources_js_Pages_parts_nav_vue":1,"resources_js_Pages_places_index_vue":1,"resources_js_Pages_places_waiting-list_vue":1,"resources_js_Pages_users_index_vue":1,"resources_js_Pages_users_register_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_auth_login_vue":1,"resources_js_Pages_company_index_vue":1,"resources_js_Pages_components_error_vue":1,"resources_js_Pages_components_errors_vue":1,"resources_js_Pages_components_message_vue":1,"resources_js_Pages_components_vue-pagination_vue":1,"resources_js_Pages_home_vue":1,"resources_js_Pages_layouts_app-layout_vue":1,"resources_js_Pages_layouts_modal-layout_vue":1,"resources_js_Pages_parts_footer_vue":1,"resources_js_Pages_parts_header_vue":1,"resources_js_Pages_parts_nav_vue":1,"resources_js_Pages_places_index_vue":1,"resources_js_Pages_places_waiting-list_vue":1,"resources_js_Pages_roles_index_vue":1,"resources_js_Pages_users_index_vue":1,"resources_js_Pages_users_register_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

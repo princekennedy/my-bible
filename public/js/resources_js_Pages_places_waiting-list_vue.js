@@ -274,6 +274,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: {
     user: function user() {
@@ -337,6 +342,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -350,7 +382,11 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
-  methods: {}
+  methods: {
+    getUsers: function getUsers() {
+      this.$inertia.visit("/waiting-list?page=".concat(this.users.current_page));
+    }
+  }
 });
 
 /***/ }),
@@ -1336,6 +1372,27 @@ var render = function() {
                     [
                       _c(
                         "inertia-link",
+                        {
+                          class: _vm.active("/roles"),
+                          attrs: { href: "/roles" }
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-id-card fa-fw mr-3" }),
+                          _c("span", { staticClass: "pb-1 md:pb-0 text-sm" }, [
+                            _vm._v("Roles")
+                          ])
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    { staticClass: "mr-6 my-2 md:my-0" },
+                    [
+                      _c(
+                        "inertia-link",
                         { class: _vm.active("#"), attrs: { href: "#" } },
                         [
                           _c("i", {
@@ -1549,50 +1606,162 @@ var render = function() {
           "w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal"
       },
       [
-        _c("div", { staticClass: "w-full p-3" }, [
-          _c("div", { staticClass: "bg-white border rounded shadow" }, [
-            _c("div", { staticClass: "border-b p-3" }, [
-              _c("h5", { staticClass: "font-bold uppercase text-gray-600" }, [
-                _vm._v("WAITING LIST")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "p-2" }, [
-              _c(
-                "ul",
-                _vm._l(_vm.users, function(user, index) {
-                  return _c(
-                    "li",
-                    {
-                      key: index,
-                      staticClass: "bg-gray-100 p-2 m-1 cursor-pointer"
-                    },
-                    [
-                      _vm._v(" \n                            Name: "),
-                      _c("a", [
-                        _vm._v(
-                          "  " +
-                            _vm._s(user.firstname + " " + user.lastname) +
-                            " "
-                        )
-                      ]),
-                      _vm._v(" \n                            Place: "),
-                      _c("a", [_vm._v(" " + _vm._s(user.name) + " ")]),
-                      _vm._v(" "),
-                      _c("span", {
-                        staticClass: "fa fa-trash ml-4 float-right"
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "fa fa-edit float-right" })
-                    ]
-                  )
-                }),
-                0
-              )
+        _c("Message", { attrs: { message: _vm.message } }),
+        _vm._v(" "),
+        _c("div", { staticClass: "w-full " }, [
+          _c("div", { staticClass: "border-b p-3 bg-white" }, [
+            _c("h5", { staticClass: "font-bold uppercase text-gray-600" }, [
+              _vm._v("\n                    WAITING LIST\n                ")
             ])
-          ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
+            },
+            [
+              _c("div", { staticClass: "block w-full overflow-x-auto" }, [
+                _c(
+                  "table",
+                  {
+                    staticClass:
+                      "items-center w-full bg-transparent border-collapse"
+                  },
+                  [
+                    _c("thead", [
+                      _c("tr", [
+                        _c(
+                          "th",
+                          {
+                            staticClass:
+                              "px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                          },
+                          [
+                            _vm._v(
+                              "\n                            Name\n                            "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "th",
+                          {
+                            staticClass:
+                              "px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                          },
+                          [
+                            _vm._v(
+                              "\n                            Place\n                            "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "th",
+                          {
+                            staticClass:
+                              "px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                          },
+                          [
+                            _vm._v(
+                              "\n                            Registered Date\n                            "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("th", {
+                          staticClass:
+                            "px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.users.data, function(user, index) {
+                        return _c("tr", { key: index }, [
+                          _c(
+                            "th",
+                            {
+                              staticClass:
+                                "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2 text-left"
+                            },
+                            [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(user.firstname + " " + user.lastname) +
+                                  " \n                            "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "td",
+                            {
+                              staticClass:
+                                "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                            },
+                            [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(user.name) +
+                                  " \n                            "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "td",
+                            {
+                              staticClass:
+                                "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                            },
+                            [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(user.created_at) +
+                                  "\n                            "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "td",
+                            {
+                              staticClass:
+                                "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                            },
+                            [
+                              _c("span", {
+                                staticClass:
+                                  "hover:bg-gray-100 p-3 text-green-400 hover:text-primary hover:font-medium fa fa-edit float-right cursor-pointer"
+                              })
+                            ]
+                          )
+                        ])
+                      }),
+                      0
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("vue-pagination", {
+                attrs: { pagination: _vm.users, offset: 4 },
+                on: {
+                  paginate: function($event) {
+                    return _vm.getUsers()
+                  }
+                }
+              })
+            ],
+            1
+          )
         ])
-      ]
+      ],
+      1
     )
   ])
 }

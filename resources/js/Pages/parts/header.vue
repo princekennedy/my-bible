@@ -73,6 +73,11 @@
                         </inertia-link>
                     </li>
                     <li class="mr-6 my-2 md:my-0">
+                        <inertia-link href="/roles" :class="active('/roles')">
+                            <i class="fa fa-id-card fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Roles</span>
+                        </inertia-link>
+                    </li>
+                    <li class="mr-6 my-2 md:my-0">
                         <inertia-link href="#" :class="active('#')">
                             <i class="fas fa-chart-area fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Analytics</span>
                         </inertia-link>

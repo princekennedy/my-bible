@@ -22,6 +22,13 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
 
     // Users
     Route::resource('users', App\Http\Controllers\app\UserController::class); 
+    Route::post('/delete-user/{user}', [App\Http\Controllers\app\UserController::class, "delete"]); 
+    Route::post('/update-user/{user}', [App\Http\Controllers\app\UserController::class, "update"]); 
+    
+    // Roles
+    Route::resource('roles', App\Http\Controllers\app\RoleController::class); 
+    Route::post('/delete-role/{role}', [App\Http\Controllers\app\RoleController::class, "delete"]); 
+    Route::post('/update-role/{role}', [App\Http\Controllers\app\RoleController::class, "update"]); 
 
     // logout 
     Route::get('/logout', [App\Http\Controllers\app\UserController::class, 'logout']); 

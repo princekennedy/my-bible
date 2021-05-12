@@ -31,42 +31,52 @@
 
             <!--Divider-->
             <!-- <hr class="border-b-2 border-gray-400 my-8 mx-4"> -->
-
-            <div class="w-full p-3">
-                <!--Table Card-->
-                <div class="bg-white border rounded shadow">
-                    <div class="border-b p-3">
-                        <h5 class="font-bold uppercase text-gray-600">WAITING LIST</h5>
+            <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+                <Message :message="message"/>
+                <div class="w-full ">
+                    <div class="border-b p-3 bg-white">
+                        <h5 class="font-bold uppercase text-gray-600">
+                            WAITING LIST
+                        </h5>
                     </div>
-                    <div class="p-2">
-
-                        
-                        <table class="w-full flex flex-row flex-no-wrap sm:bg-white rounded overflow-hidden sm:shadow-lg my-5">
-                            <thead class="text-white">
-                                <tr  v-for="(user, index) in users.data" v-bind:key="index" class="text-primary flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
-                                    <th class="p-3 text-left w-10"> Position </th>
-                                    <th class="p-3 text-left"> Name </th>
-                                    <th class="p-3 text-left"> Place</th>
-                                    <!-- <th class="p-3 text-left" width="110px">Action</th> -->
+                    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+                        <div class="block w-full overflow-x-auto">
+                        <!-- Projects table -->
+                            <table class="items-center w-full bg-transparent border-collapse">
+                                <thead>
+                                <tr>
+                                    <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                    Name
+                                    </th>
+                                    <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                    Place
+                                    </th>
+                                    <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                    Registered Date
+                                    </th>
                                 </tr>
-                            </thead>
-                            <tbody class="flex-1 sm:flex-none">
-                                <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0" v-for="(user, index) in users.data" v-bind:key="index" >
-                                    <td class="border-grey-light border hover:bg-gray-100 p-3"> <span class="badge"> {{ index + 1 }} </span> </td>
-                                    <td class="border-grey-light border hover:bg-gray-100 p-3">  {{ user.firstname + " " + user.lastname }}  </td>
-                                    <td class="border-grey-light border hover:bg-gray-100 p-3 truncate"> {{ user.name }} </td>
-                                    <!-- <td class="border-grey-light border">
-                                        <span class="hover:bg-gray-100 p-3 text-red-200 hover:text-red-400 hover:font-medium fa fa-trash ml-4 float-right cursor-pointer"> </span>
-                                        <span class="hover:bg-gray-100 p-3 text-green-400 hover:text-green-600 hover:font-medium fa fa-edit float-right cursor-pointer"> </span>
-                                    </td> -->
+                                </thead>
+                                <tbody>
+                                <tr  v-for="(user, index) in users.data" v-bind:key="index">
+                                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2 text-left">
+                                    {{ user.firstname  + ' ' + user.lastname }} 
+                                    </th>
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                    {{ user.name }} 
+                                    </td>
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                    {{ user.created_at }}
+                                    </td>
+                            
                                 </tr>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                         <vue-pagination  :pagination="users" @paginate="getUsers()" :offset="4"></vue-pagination>
                     </div>
                 </div>
-                <!--/table Card-->
             </div>
+
         </div>
 
     </AppLayout>
@@ -78,15 +88,20 @@
 import AppLayout from './layouts/app-layout.vue';
 import VuePagination from './components/vue-pagination'
 import style from '../../css/responsive-table.css'
+import Message from './components/message'
+import Error from './components/error'
 
 export default{
     components: {
         AppLayout,
-        VuePagination
+        VuePagination,
+        Message,
+        Error,
     },
     props:{
-        cards: null,
-        users: null,
+        cards: Array,
+        users: Object,
+        message: String,
     },
     data(){
         return { }

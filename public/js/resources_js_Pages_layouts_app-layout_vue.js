@@ -161,6 +161,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: {
     user: function user() {
@@ -799,6 +804,27 @@ var render = function() {
                           _c("i", { staticClass: "fa fa-envelope fa-fw mr-3" }),
                           _c("span", { staticClass: "pb-1 md:pb-0 text-sm" }, [
                             _vm._v("Users")
+                          ])
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    { staticClass: "mr-6 my-2 md:my-0" },
+                    [
+                      _c(
+                        "inertia-link",
+                        {
+                          class: _vm.active("/roles"),
+                          attrs: { href: "/roles" }
+                        },
+                        [
+                          _c("i", { staticClass: "fa fa-id-card fa-fw mr-3" }),
+                          _c("span", { staticClass: "pb-1 md:pb-0 text-sm" }, [
+                            _vm._v("Roles")
                           ])
                         ]
                       )

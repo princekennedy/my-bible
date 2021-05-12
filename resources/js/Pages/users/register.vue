@@ -3,7 +3,7 @@
     <div class="max-w-md mx-auto mt-4 bg-white shadow rounded my-8">
         <form  method="POST" @submit.prevent="save">
             <div class="text-center text-gray-600 py-4"><b>Create Account</b></div>
-            <p v-if="message" class="p-1 m-1 text-white bg-primary text-center"> <span class="p-1">{{ message }} </span></p>
+            <p v-if="message" class="p-1 m-1 text-white text-center"> <span class="p-1">{{ message }} </span></p>
             <div class="bg-gray-200 pt-8 pb-16">
                 <div class="w-4/5 mx-auto">
                     <div class="flex items-center bg-white rounded shadow-md mb-4">
@@ -44,8 +44,8 @@
     export default{
         components: { },
         props: {
-            message: null,
-            errors: null,
+            message: String,
+            errors: String,
         },
         data(){
             return {
