@@ -289,7 +289,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -1721,18 +1720,18 @@ var render = function() {
                           _vm._l(_vm.users.data, function(user, index) {
                             return _c("tr", { key: index }, [
                               _c(
-                                "th",
+                                "td",
                                 {
                                   staticClass:
-                                    "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2 text-left"
+                                    "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                " +
+                                    "\n                                        " +
                                       _vm._s(
                                         user.firstname + " " + user.lastname
                                       ) +
-                                      " \n                                "
+                                      " \n                                    "
                                   )
                                 ]
                               ),
@@ -1745,9 +1744,9 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                " +
+                                    "\n                                        " +
                                       _vm._s(user.name) +
-                                      " \n                                "
+                                      " \n                                    "
                                   )
                                 ]
                               ),
@@ -1760,9 +1759,9 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                " +
+                                    "\n                                        " +
                                       _vm._s(user.created_at) +
-                                      "\n                                "
+                                      "\n                                    "
                                   )
                                 ]
                               )

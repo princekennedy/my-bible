@@ -1864,67 +1864,77 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "tbody",
+                      { staticClass: "p-1" },
                       _vm._l(_vm.users.data, function(user, index) {
-                        return _c("tr", { key: index }, [
-                          _c(
-                            "th",
-                            {
-                              staticClass:
-                                "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2 text-left"
-                            },
-                            [
-                              _vm._v(
-                                "\n                            " +
-                                  _vm._s(user.firstname + " " + user.lastname) +
-                                  " \n                            "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "td",
-                            {
-                              staticClass:
-                                "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
-                            },
-                            [
-                              _vm._v(
-                                "\n                            " +
-                                  _vm._s(user.name) +
-                                  " \n                            "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "td",
-                            {
-                              staticClass:
-                                "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
-                            },
-                            [
-                              _vm._v(
-                                "\n                            " +
-                                  _vm._s(user.created_at) +
-                                  "\n                            "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "td",
-                            {
-                              staticClass:
-                                "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
-                            },
-                            [
-                              _c("span", {
+                        return _c(
+                          "tr",
+                          {
+                            key: index,
+                            staticClass: "border hover:bg-gray-100"
+                          },
+                          [
+                            _c(
+                              "td",
+                              {
                                 staticClass:
-                                  "hover:bg-gray-100 p-3 text-green-400 hover:text-primary hover:font-medium fa fa-edit float-right cursor-pointer"
-                              })
-                            ]
-                          )
-                        ])
+                                  "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(
+                                      user.firstname + " " + user.lastname
+                                    ) +
+                                    "  \n                                "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              {
+                                staticClass:
+                                  "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(user.name) +
+                                    " \n                                "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              {
+                                staticClass:
+                                  "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(user.created_at) +
+                                    "\n                                "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              {
+                                staticClass:
+                                  "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                              },
+                              [
+                                _c("span", {
+                                  staticClass:
+                                    "hover:bg-gray-100 p-3 text-green-400 hover:text-primary hover:font-medium fa fa-edit float-right cursor-pointer"
+                                })
+                              ]
+                            )
+                          ]
+                        )
                       }),
                       0
                     )

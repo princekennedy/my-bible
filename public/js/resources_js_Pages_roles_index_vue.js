@@ -2623,7 +2623,7 @@ var render = function() {
                     "table",
                     {
                       staticClass:
-                        "shadow-md rounded m-auto w-full sm:shadow-lg my-5"
+                        "shadow-md rounded m-auto w-full sm:shadow-lg"
                     },
                     [
                       _c(
@@ -2641,7 +2641,7 @@ var render = function() {
                                 "th",
                                 {
                                   staticClass:
-                                    "w-full p-2 border bg-gray-100 border-r-0 rounded-tl border-gray-100",
+                                    "w-full p-2 border border-r-0 rounded-tl border-gray-100",
                                   attrs: { scope: "col" }
                                 },
                                 [_vm._v("Name")]
@@ -2655,7 +2655,7 @@ var render = function() {
                                   attrs: { scope: "col" }
                                 },
                                 [
-                                  _c("h4", { staticClass: "u-slab" }, [
+                                  _c("h5", { staticClass: "u-slab" }, [
                                     _vm._v("Permissions")
                                   ])
                                 ]
@@ -2696,7 +2696,7 @@ var render = function() {
                                 "th",
                                 {
                                   staticClass:
-                                    "w-full p-2 bg-gray-100 border border-r-0 border-t-0 border-gray-100",
+                                    "w-full text-sm p-2 border border-r-0 border-t-0 border-gray-100",
                                   attrs: { scope: "col" }
                                 },
                                 [
@@ -2739,7 +2739,7 @@ var render = function() {
                                             },
                                             [
                                               _vm._v(
-                                                " \n                                            " +
+                                                " \n                                                " +
                                                   _vm._s(
                                                     permission.name
                                                       .toUpperCase()
@@ -2761,15 +2761,13 @@ var render = function() {
                                 "th",
                                 {
                                   staticClass:
-                                    "hidden sm:block w-full p-2 border border-r-0 border-t-0 border-gray-100  ",
+                                    "hidden sm:block text-sm w-full p-2 border border-r-0 border-t-0 border-gray-100  ",
                                   attrs: { scope: "row" }
                                 },
                                 [
-                                  _vm._v(
-                                    "\n                                    " +
-                                      _vm._s(role.created_at) +
-                                      "\n                                "
-                                  )
+                                  _c("span", { staticClass: "text-sm" }, [
+                                    _vm._v(" " + _vm._s(role.created_at) + " ")
+                                  ])
                                 ]
                               ),
                               _vm._v(" "),
@@ -2777,13 +2775,13 @@ var render = function() {
                                 "th",
                                 {
                                   staticClass:
-                                    "hidden sm:block w-full  p-2 border border-t-0 border-gray-100 ",
+                                    "hidden sm:block w-full text-sm p-2 border border-t-0 border-gray-100 ",
                                   attrs: { scope: "row" }
                                 },
                                 [
                                   _c("span", {
                                     staticClass:
-                                      "hover:bg-gray-100 p-3 text-red-200 hover:text-red-400 hover:font-medium fa fa-trash ml-4 float-right cursor-pointer",
+                                      "hover:bg-gray-100 p-2 text-red-300 hover:text-red-500 hover:font-small fa fa-trash ml-4 float-right cursor-pointer",
                                     on: {
                                       click: function($event) {
                                         return _vm.deleterole(role.id)
@@ -2793,7 +2791,7 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("span", {
                                     staticClass:
-                                      "hover:bg-gray-100 p-3 text-green-400 hover:text-primary hover:font-medium fa fa-edit float-right cursor-pointer",
+                                      "hover:bg-gray-100 p-2 text-gray-400 hover:text-primary hover:font-small fa fa-edit float-right cursor-pointer",
                                     on: {
                                       click: function($event) {
                                         return _vm.editrole(role)

@@ -109,8 +109,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -1574,131 +1572,139 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "tbody",
+                        { staticClass: "p-1" },
                         _vm._l(_vm.companies.data, function(company, index) {
-                          return _c("tr", { key: index }, [
-                            _c(
-                              "th",
-                              {
-                                staticClass:
-                                  "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2 text-left"
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(company.name) +
-                                    " \n                            "
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              {
-                                staticClass:
-                                  "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(company.description) +
-                                    " \n                            "
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              {
-                                staticClass:
-                                  "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "flex items-center mr-4 mb-4"
-                                  },
-                                  [
-                                    _c("input", {
-                                      staticClass: "hidden",
-                                      attrs: {
-                                        id: index,
-                                        type: "radio",
-                                        name: "radio"
-                                      },
-                                      domProps: {
-                                        checked: _vm.check(company.id)
-                                      },
-                                      on: {
-                                        change: function($event) {
-                                          return _vm.activeCompany(company.id)
+                          return _c(
+                            "tr",
+                            {
+                              key: index,
+                              staticClass: "border hover:bg-gray-100"
+                            },
+                            [
+                              _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                    " +
+                                      _vm._s(company.name) +
+                                      " \n                                "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                    " +
+                                      _vm._s(company.description) +
+                                      " \n                                "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                {
+                                  staticClass:
+                                    "border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-2"
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "flex items-center mr-4 mb-4"
+                                    },
+                                    [
+                                      _c("input", {
+                                        staticClass: "hidden",
+                                        attrs: {
+                                          id: index,
+                                          type: "radio",
+                                          name: "radio"
+                                        },
+                                        domProps: {
+                                          checked: _vm.check(company.id)
+                                        },
+                                        on: {
+                                          change: function($event) {
+                                            return _vm.activeCompany(company.id)
+                                          }
                                         }
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass:
-                                          "flex items-center cursor-pointer",
-                                        attrs: { for: index }
-                                      },
-                                      [
-                                        _c("span", {
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "label",
+                                        {
                                           staticClass:
-                                            "w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink"
-                                        })
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              {
-                                staticClass:
-                                  "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                " +
-                                    _vm._s(company.created_at) +
-                                    "\n                            "
-                                )
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              {
-                                staticClass:
-                                  "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
-                              },
-                              [
-                                _c("span", {
+                                            "flex items-center cursor-pointer",
+                                          attrs: { for: index }
+                                        },
+                                        [
+                                          _c("span", {
+                                            staticClass:
+                                              "w-6 h-6 inline-block  rounded-full border border-grey flex-no-shrink"
+                                          })
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                {
                                   staticClass:
-                                    "hover:bg-gray-100 p-3 text-red-200 hover:text-red-400 hover:font-medium fa fa-trash ml-4 float-right cursor-pointer",
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.deleteCompany(company.id)
-                                    }
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c("span", {
+                                    "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                    " +
+                                      _vm._s(company.created_at) +
+                                      "\n                                "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "td",
+                                {
                                   staticClass:
-                                    "hover:bg-gray-100 p-3 text-green-400 hover:text-primary hover:font-medium fa fa-edit float-right cursor-pointer",
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.editCompany(company)
+                                    "border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2"
+                                },
+                                [
+                                  _c("span", {
+                                    staticClass:
+                                      "hover:bg-gray-100 p-3 text-red-200 hover:text-red-400 hover:font-medium fa fa-trash ml-4 float-right cursor-pointer",
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.deleteCompany(company.id)
+                                      }
                                     }
-                                  }
-                                })
-                              ]
-                            )
-                          ])
+                                  }),
+                                  _vm._v(" "),
+                                  _c("span", {
+                                    staticClass:
+                                      "hover:bg-gray-100 p-3 text-green-400 hover:text-primary hover:font-medium fa fa-edit float-right cursor-pointer",
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.editCompany(company)
+                                      }
+                                    }
+                                  })
+                                ]
+                              )
+                            ]
+                          )
                         }),
                         0
                       )

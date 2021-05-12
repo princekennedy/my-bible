@@ -57,18 +57,17 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr  v-for="(user, index) in users.data" v-bind:key="index">
-                                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2 text-left">
-                                    {{ user.firstname  + ' ' + user.lastname }} 
-                                    </th>
-                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
-                                    {{ user.name }} 
-                                    </td>
-                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
-                                    {{ user.created_at }}
-                                    </td>
-                            
-                                </tr>
+                                    <tr v-for="(user, index) in users.data" v-bind:key="index">
+                                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                            {{ user.firstname  + ' ' + user.lastname }} 
+                                        </td>
+                                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                            {{ user.name }} 
+                                        </td>
+                                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                            {{ user.created_at }}
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

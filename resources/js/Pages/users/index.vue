@@ -70,22 +70,22 @@
                                 </th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr  v-for="(user, index) in users.data" v-bind:key="index">
-                                <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2 text-left">
-                                {{ user.firstname  + ' ' + user.lastname }} 
-                                </th>
-                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
-                                {{ user.email }} 
-                                </td>
-                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
-                                {{ user.created_at }}
-                                </td>
-                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
-                                    <span v-on:click="deleteUser(user.id)" class="hover:bg-gray-100 p-3 text-red-200 hover:text-red-400 hover:font-medium fa fa-trash ml-4 float-right cursor-pointer"> </span>
-                                    <span v-on:click="editUser(user)" class="hover:bg-gray-100 p-3 text-green-400 hover:text-primary hover:font-medium fa fa-edit float-right cursor-pointer"> </span>
-                                </td>
-                            </tr>
+                            <tbody class="p-1">
+                                <tr class="border hover:bg-gray-100"  v-for="(user, index) in users.data" v-bind:key="index">
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                        {{ user.firstname  + ' ' + user.lastname }} 
+                                    </td>
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                        {{ user.email }} 
+                                    </td>
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                        {{ user.created_at }}
+                                    </td>
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                        <span v-on:click="deleteUser(user.id)" class="hover:bg-gray-100 p-3 text-red-200 hover:text-red-400 hover:font-medium fa fa-trash ml-4 float-right cursor-pointer"> </span>
+                                        <span v-on:click="editUser(user)" class="hover:bg-gray-100 p-3 text-green-400 hover:text-primary hover:font-medium fa fa-edit float-right cursor-pointer"> </span>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

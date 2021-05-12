@@ -30,12 +30,12 @@
                     </div>
                     <div class="p-2">
 
-                        <table class="shadow-md rounded m-auto w-full sm:shadow-lg my-5">
+                        <table class="shadow-md rounded m-auto w-full sm:shadow-lg">
                             <thead class="sticky block top-0" scope="col">
                                 <tr class="flex text-left text-primary ">
-                                    <th scope="col" class="w-full p-2 border bg-gray-100 border-r-0 rounded-tl border-gray-100">Name</th>
+                                    <th scope="col" class="w-full p-2 border border-r-0 rounded-tl border-gray-100">Name</th>
                                     <th scope="col" class="w-full  p-2 border bg-white border-r-0 border-gray-100 font-normal">
-                                        <h4 class="u-slab">Permissions</h4>
+                                        <h5 class="u-slab">Permissions</h5>
                                     </th>
                                     <th scope="row" class="hidden sm:block w-full  p-2 border bg-white border-r-0 border-gray-100 font-normal">
                                         <h4 class="u-slab">Created At</h4>
@@ -47,24 +47,24 @@
 
                             <tbody>
                                 <tr class="flex text-left"  v-for="(role, index) in roles.data" v-bind:key="index" >
-                                    <th scope="col" class="w-full p-2 bg-gray-100 border border-r-0 border-t-0 border-gray-100">
+                                    <th scope="col" class="w-full text-sm p-2 border border-r-0 border-t-0 border-gray-100">
                                         {{ role.name }}
                                     </th>
                                     <th scope="col" class="w-full p-2 border border-r-0 border-t-0 border-gray-100 flex flex-col">
                                         <ul class="text-sm font-normal mb-1">
                                             <li class="mb-2 tick"  v-for="(permission, index) in role.permissions" :key="index"> 
                                                 <div class="bg-green-100 border border-green-400 text-green-700 p-1 rounded relative" role="alert"> 
-                                                {{ permission.name.toUpperCase().replaceAll("_", " ") }} 
+                                                    {{ permission.name.toUpperCase().replaceAll("_", " ") }} 
                                                 </div>
                                             </li>
                                         </ul>
                                     </th>
-                                    <th scope="row" class="hidden sm:block w-full p-2 border border-r-0 border-t-0 border-gray-100  ">
-                                        {{ role.created_at }}
+                                    <th scope="row" class="hidden sm:block text-sm w-full p-2 border border-r-0 border-t-0 border-gray-100  ">
+                                        <span class="text-sm"> {{ role.created_at }} </span>
                                     </th>
-                                    <th scope="row" class="hidden sm:block w-full  p-2 border border-t-0 border-gray-100 ">
-                                        <span v-on:click="deleterole(role.id)" class="hover:bg-gray-100 p-3 text-red-200 hover:text-red-400 hover:font-medium fa fa-trash ml-4 float-right cursor-pointer"> </span>
-                                        <span v-on:click="editrole(role)" class="hover:bg-gray-100 p-3 text-green-400 hover:text-primary hover:font-medium fa fa-edit float-right cursor-pointer"> </span>
+                                    <th scope="row" class="hidden sm:block w-full text-sm p-2 border border-t-0 border-gray-100 ">
+                                        <span v-on:click="deleterole(role.id)" class="hover:bg-gray-100 p-2 text-red-300 hover:text-red-500 hover:font-small fa fa-trash ml-4 float-right cursor-pointer"> </span>
+                                        <span v-on:click="editrole(role)" class="hover:bg-gray-100 p-2 text-gray-400 hover:text-primary hover:font-small fa fa-edit float-right cursor-pointer"> </span>
                                     </th>
                                 </tr>
 

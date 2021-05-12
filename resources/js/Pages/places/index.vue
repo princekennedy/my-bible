@@ -56,7 +56,7 @@
                     <!-- Projects table -->
                         <table class="items-center w-full bg-transparent border-collapse">
                             <thead>
-                            <tr>
+                            <tr class="text-primary">
                                 <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                     Name
                                 </th>
@@ -77,11 +77,11 @@
                                 </th>
                             </tr>
                             </thead>
-                            <tbody>
-                                <tr  v-for="(place, index) in places.data" v-bind:key="index">
-                                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2 text-left">
-                                        {{ place.name }} 
-                                    </th>
+                            <tbody class="p-1">
+                                <tr class="border hover:bg-gray-100" v-for="(place, index) in places.data" v-bind:key="index">
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
+                                        {{ place.name }}
+                                    </td>
                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-2">
                                         {{ place.description }}
                                     </td>
@@ -174,7 +174,7 @@ export default{
                 alert("Geolocation is not supported by this browser.");
             }
         },
-        
+
         editPlace(place){
             this.place = place;
             this.form = this.place;
