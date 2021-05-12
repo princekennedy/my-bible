@@ -40,7 +40,7 @@ class CompanyController extends Controller
     {
         $validated = request()->validate([
             "name" => ["required", "unique:companies"],
-            "description" => ["required"],
+            "description" => [],
         ]);
         $company = Company::create($validated);
         session()->flash('message' , ($company) ? "Company created sucessfully" : " Company Already exist");
@@ -80,7 +80,7 @@ class CompanyController extends Controller
     {
         $validated = request()->validate([
             "name" => ["required"],
-            "description" => ["required"],
+            "description" => [],
         ]);
         $company = $company->update($validated);
         session()->flash('message' , "Company Updated sucessfully");

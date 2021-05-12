@@ -73,7 +73,7 @@ class User extends Authenticatable
     }
 
     public function activeCompany(){
-        $this->activeCompany = \Facades\App\Cache\Users::getActiveCompany();
+        $this->activeCompany = \Facades\App\Cache\UsersCache::getActiveCompany();
         return $this->activeCompany;
     }
 

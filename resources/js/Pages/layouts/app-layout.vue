@@ -17,19 +17,16 @@
 
 <script>
 
-    import Header  from '../parts/header';
-    import Nav from '../parts/nav';
+    import Header  from '../parts/header'
+    import Nav from '../parts/nav'
     import Footer from '../parts/footer'
+    import Message from '../components/message'
     export default {
         name: "app-layout",
-        components: { Header, Nav, Footer },
-        data(){
-            return {
-            }
+        props: {
         },
-        methods: {
-
-        }
+        components: { Header, Nav, Footer, Message },
+        mounted(){  }
 
     }
 </script>

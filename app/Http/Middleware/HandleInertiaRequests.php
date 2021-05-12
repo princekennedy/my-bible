@@ -39,17 +39,24 @@ class HandleInertiaRequests extends Middleware
         return array_merge(parent::share($request), [
             // Synchronously
             'appName' => config('app.name'),
+
+            // Company message
+            'active_company' => ($request->user()) ? $request->user()->activeCompany() : null ,
+
+            // Flash message
             'flash' => session('message', null),
+
             // Message
             'message' => session('message', null),
+
             // Error
             'error' => session('error', null),
+
             // Lazily
             'auth.user' => ($request->user()) ? $request->user() : null ,
 
-            // 'auth.user' => fn () => $request->user()
-            //     ? $request->user()->only('id', 'name', 'email')
-            //     : null,            
+            // Flash global_message
+            'global_message' => session('global_message', null),        
 
         ]);
     }

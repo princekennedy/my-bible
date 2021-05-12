@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\CreatedUpdatedTrait;
 
 class ActiveConfig extends Model
 {
-    use HasFactory;
+    use HasFactory,CreatedUpdatedTrait;
     protected $table = 'active_config';
     protected $fillable = [
         'key', 'value',

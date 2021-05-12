@@ -19,26 +19,29 @@ Route::get('/register', [App\Http\Controllers\app\UserController::class, 'regist
 Route::post('/register', [App\Http\Controllers\app\UserController::class, 'store']); 
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
-
-    // Users
-    Route::resource('users', App\Http\Controllers\app\UserController::class); 
-    Route::post('/delete-user/{user}', [App\Http\Controllers\app\UserController::class, "delete"]); 
-    Route::post('/update-user/{user}', [App\Http\Controllers\app\UserController::class, "update"]); 
     
-    // Roles
-    Route::resource('roles', App\Http\Controllers\app\RoleController::class); 
-    Route::post('/delete-role/{role}', [App\Http\Controllers\app\RoleController::class, "delete"]); 
-    Route::post('/update-role/{role}', [App\Http\Controllers\app\RoleController::class, "update"]); 
+    Route::group(['middleware' => ['withCompany']], function () {
+        
+        // Users
+        Route::resource('users', App\Http\Controllers\app\UserController::class); 
+        Route::post('/delete-user/{user}', [App\Http\Controllers\app\UserController::class, "delete"]); 
+        Route::post('/update-user/{user}', [App\Http\Controllers\app\UserController::class, "update"]); 
+        
+        // Roles
+        Route::resource('roles', App\Http\Controllers\app\RoleController::class); 
+        Route::post('/delete-role/{role}', [App\Http\Controllers\app\RoleController::class, "delete"]); 
+        Route::post('/update-role/{role}', [App\Http\Controllers\app\RoleController::class, "update"]); 
 
-    // logout 
-    Route::get('/logout', [App\Http\Controllers\app\UserController::class, 'logout']); 
-    Route::post('/logout', [App\Http\Controllers\app\UserController::class, 'logout']); 
+        // logout 
+        Route::get('/logout', [App\Http\Controllers\app\UserController::class, 'logout']); 
+        Route::post('/logout', [App\Http\Controllers\app\UserController::class, 'logout']); 
 
-    Route::get('/', [App\Http\Controllers\app\HomeController::class, 'index']); 
+        Route::get('/', [App\Http\Controllers\app\HomeController::class, 'index']); 
 
-    // Places
-    Route::resource('places', App\Http\Controllers\app\PlaceController::class); 
-    Route::get('/waiting-list', [App\Http\Controllers\app\HomeController::class, 'waitingList']); 
+        // Places
+        Route::resource('places', App\Http\Controllers\app\PlaceController::class); 
+        Route::get('/waiting-list', [App\Http\Controllers\app\HomeController::class, 'waitingList']); 
+    });
 
     // company
     Route::resource('company', App\Http\Controllers\app\CompanyController::class);     

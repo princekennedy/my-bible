@@ -62,6 +62,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "message",
   props: {
     message: String
   },
@@ -349,6 +350,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../parts/header */ "./resources/js/Pages/parts/header.vue");
 /* harmony import */ var _parts_nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../parts/nav */ "./resources/js/Pages/parts/nav.vue");
 /* harmony import */ var _parts_footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../parts/footer */ "./resources/js/Pages/parts/footer.vue");
+/* harmony import */ var _components_message__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/message */ "./resources/js/Pages/components/message.vue");
 //
 //
 //
@@ -366,20 +368,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "app-layout",
+  props: {},
   components: {
     Header: _parts_header__WEBPACK_IMPORTED_MODULE_0__.default,
     Nav: _parts_nav__WEBPACK_IMPORTED_MODULE_1__.default,
-    Footer: _parts_footer__WEBPACK_IMPORTED_MODULE_2__.default
+    Footer: _parts_footer__WEBPACK_IMPORTED_MODULE_2__.default,
+    Message: _components_message__WEBPACK_IMPORTED_MODULE_3__.default
   },
-  data: function data() {
-    return {};
-  },
-  methods: {}
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -501,10 +503,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: {
     user: function user() {
       return this.$page.props.auth.user;
+    },
+    company: function company() {
+      return this.$page.props.active_company;
     }
   },
   methods: {
@@ -1975,7 +1981,23 @@ var render = function() {
             "w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0"
         },
         [
-          _vm._m(0),
+          _c("div", { staticClass: "w-1/2 pl-2 md:pl-0" }, [
+            _c(
+              "a",
+              {
+                staticClass:
+                  "text-gray-900 text-base xl:text-xl no-underline hover:no-underline font-bold",
+                attrs: { href: "#" }
+              },
+              [
+                _c("i", { staticClass: "fas fa-sun text-pink-600 pr-3" }),
+                _vm._v(" \n                EnQue "),
+                _vm.company
+                  ? _c("span", [_vm._v("( " + _vm._s(_vm.company.name) + ") ")])
+                  : _vm._e()
+              ]
+            )
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "w-1/2 pr-0" }, [
             _c(
@@ -2031,7 +2053,7 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _vm._m(1)
+                  _vm._m(0)
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "block lg:hidden pr-4" }, [
@@ -2276,25 +2298,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-1/2 pl-2 md:pl-0" }, [
-      _c(
-        "a",
-        {
-          staticClass:
-            "text-gray-900 text-base xl:text-xl no-underline hover:no-underline font-bold",
-          attrs: { href: "#" }
-        },
-        [
-          _c("i", { staticClass: "fas fa-sun text-pink-600 pr-3" }),
-          _vm._v(" Admin Day Mode\n            ")
-        ]
-      )
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

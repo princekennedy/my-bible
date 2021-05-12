@@ -67,16 +67,19 @@
 
 <script>
 
-import AppLayout from '../layouts/app-layout';
+import AppLayout from '../layouts/app-layout'
 import VuePagination from '../components/vue-pagination'
+import Message from '../components/message'
 
 export default{
     components: {
         AppLayout,
-        VuePagination
+        VuePagination,
+        Message,
     },
     props:{
-        places: Object
+        places: Object,
+        message: String,
     },
     data(){
         return {  }

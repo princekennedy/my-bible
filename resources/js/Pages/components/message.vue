@@ -11,6 +11,7 @@
 <script>
 
     export default{
+        name: "message",
         props:{
             message:String,
         },

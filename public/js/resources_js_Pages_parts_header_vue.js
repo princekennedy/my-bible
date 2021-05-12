@@ -117,10 +117,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: {
     user: function user() {
       return this.$page.props.auth.user;
+    },
+    company: function company() {
+      return this.$page.props.active_company;
     }
   },
   methods: {
@@ -239,7 +243,23 @@ var render = function() {
             "w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0"
         },
         [
-          _vm._m(0),
+          _c("div", { staticClass: "w-1/2 pl-2 md:pl-0" }, [
+            _c(
+              "a",
+              {
+                staticClass:
+                  "text-gray-900 text-base xl:text-xl no-underline hover:no-underline font-bold",
+                attrs: { href: "#" }
+              },
+              [
+                _c("i", { staticClass: "fas fa-sun text-pink-600 pr-3" }),
+                _vm._v(" \n                EnQue "),
+                _vm.company
+                  ? _c("span", [_vm._v("( " + _vm._s(_vm.company.name) + ") ")])
+                  : _vm._e()
+              ]
+            )
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "w-1/2 pr-0" }, [
             _c(
@@ -295,7 +315,7 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _vm._m(1)
+                  _vm._m(0)
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "block lg:hidden pr-4" }, [
@@ -540,25 +560,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-1/2 pl-2 md:pl-0" }, [
-      _c(
-        "a",
-        {
-          staticClass:
-            "text-gray-900 text-base xl:text-xl no-underline hover:no-underline font-bold",
-          attrs: { href: "#" }
-        },
-        [
-          _c("i", { staticClass: "fas fa-sun text-pink-600 pr-3" }),
-          _vm._v(" Admin Day Mode\n            ")
-        ]
-      )
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

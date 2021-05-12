@@ -6,7 +6,8 @@
 
             <div class="w-1/2 pl-2 md:pl-0">
                 <a class="text-gray-900 text-base xl:text-xl no-underline hover:no-underline font-bold" href="#">
-                    <i class="fas fa-sun text-pink-600 pr-3"></i> Admin Day Mode
+                    <i class="fas fa-sun text-pink-600 pr-3"></i> 
+                    EnQue <span v-if="company">( {{  company.name }}) </span>
                 </a>
             </div>
             <div class="w-1/2 pr-0">
@@ -111,6 +112,9 @@ export default {
         user() {
             return this.$page.props.auth.user
         },
+        company() {
+            return this.$page.props.active_company
+        }
     },
     methods: { 
         active(page){
@@ -120,7 +124,6 @@ export default {
                 return 'block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-white hover:border-primary';
             }
         },
-
     },
 
     mounted(){}

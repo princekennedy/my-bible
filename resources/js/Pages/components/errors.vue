@@ -15,6 +15,7 @@
 <script>
 
     export default{
+        name: "errors",
         props:{
             message: String,
             errors: Object,
