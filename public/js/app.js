@@ -37815,62 +37815,6 @@ Vue.compile = compileToFunctions;
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./auth/login": [
-		"./resources/js/Pages/auth/login.vue",
-		"resources_js_Pages_auth_login_vue"
-	],
-	"./auth/login.vue": [
-		"./resources/js/Pages/auth/login.vue",
-		"resources_js_Pages_auth_login_vue"
-	],
-	"./company": [
-		"./resources/js/Pages/company/index.vue",
-		"resources_js_Pages_company_index_vue"
-	],
-	"./company/": [
-		"./resources/js/Pages/company/index.vue",
-		"resources_js_Pages_company_index_vue"
-	],
-	"./company/index": [
-		"./resources/js/Pages/company/index.vue",
-		"resources_js_Pages_company_index_vue"
-	],
-	"./company/index.vue": [
-		"./resources/js/Pages/company/index.vue",
-		"resources_js_Pages_company_index_vue"
-	],
-	"./components/error": [
-		"./resources/js/Pages/components/error.vue",
-		"resources_js_Pages_components_error_vue"
-	],
-	"./components/error.vue": [
-		"./resources/js/Pages/components/error.vue",
-		"resources_js_Pages_components_error_vue"
-	],
-	"./components/errors": [
-		"./resources/js/Pages/components/errors.vue",
-		"resources_js_Pages_components_errors_vue"
-	],
-	"./components/errors.vue": [
-		"./resources/js/Pages/components/errors.vue",
-		"resources_js_Pages_components_errors_vue"
-	],
-	"./components/message": [
-		"./resources/js/Pages/components/message.vue",
-		"resources_js_Pages_components_message_vue"
-	],
-	"./components/message.vue": [
-		"./resources/js/Pages/components/message.vue",
-		"resources_js_Pages_components_message_vue"
-	],
-	"./components/vue-pagination": [
-		"./resources/js/Pages/components/vue-pagination.vue",
-		"resources_js_Pages_components_vue-pagination_vue"
-	],
-	"./components/vue-pagination.vue": [
-		"./resources/js/Pages/components/vue-pagination.vue",
-		"resources_js_Pages_components_vue-pagination_vue"
-	],
 	"./home": [
 		"./resources/js/Pages/home.vue",
 		"resources_js_Pages_home_vue"
@@ -37878,110 +37822,6 @@ var map = {
 	"./home.vue": [
 		"./resources/js/Pages/home.vue",
 		"resources_js_Pages_home_vue"
-	],
-	"./layouts/app-layout": [
-		"./resources/js/Pages/layouts/app-layout.vue",
-		"resources_js_Pages_layouts_app-layout_vue"
-	],
-	"./layouts/app-layout.vue": [
-		"./resources/js/Pages/layouts/app-layout.vue",
-		"resources_js_Pages_layouts_app-layout_vue"
-	],
-	"./layouts/modal-layout": [
-		"./resources/js/Pages/layouts/modal-layout.vue",
-		"resources_js_Pages_layouts_modal-layout_vue"
-	],
-	"./layouts/modal-layout.vue": [
-		"./resources/js/Pages/layouts/modal-layout.vue",
-		"resources_js_Pages_layouts_modal-layout_vue"
-	],
-	"./parts/footer": [
-		"./resources/js/Pages/parts/footer.vue",
-		"resources_js_Pages_parts_footer_vue"
-	],
-	"./parts/footer.vue": [
-		"./resources/js/Pages/parts/footer.vue",
-		"resources_js_Pages_parts_footer_vue"
-	],
-	"./parts/header": [
-		"./resources/js/Pages/parts/header.vue",
-		"resources_js_Pages_parts_header_vue"
-	],
-	"./parts/header.vue": [
-		"./resources/js/Pages/parts/header.vue",
-		"resources_js_Pages_parts_header_vue"
-	],
-	"./parts/nav": [
-		"./resources/js/Pages/parts/nav.vue",
-		"resources_js_Pages_parts_nav_vue"
-	],
-	"./parts/nav.vue": [
-		"./resources/js/Pages/parts/nav.vue",
-		"resources_js_Pages_parts_nav_vue"
-	],
-	"./places": [
-		"./resources/js/Pages/places/index.vue",
-		"resources_js_Pages_places_index_vue"
-	],
-	"./places/": [
-		"./resources/js/Pages/places/index.vue",
-		"resources_js_Pages_places_index_vue"
-	],
-	"./places/index": [
-		"./resources/js/Pages/places/index.vue",
-		"resources_js_Pages_places_index_vue"
-	],
-	"./places/index.vue": [
-		"./resources/js/Pages/places/index.vue",
-		"resources_js_Pages_places_index_vue"
-	],
-	"./places/waiting-list": [
-		"./resources/js/Pages/places/waiting-list.vue",
-		"resources_js_Pages_places_waiting-list_vue"
-	],
-	"./places/waiting-list.vue": [
-		"./resources/js/Pages/places/waiting-list.vue",
-		"resources_js_Pages_places_waiting-list_vue"
-	],
-	"./roles": [
-		"./resources/js/Pages/roles/index.vue",
-		"resources_js_Pages_roles_index_vue"
-	],
-	"./roles/": [
-		"./resources/js/Pages/roles/index.vue",
-		"resources_js_Pages_roles_index_vue"
-	],
-	"./roles/index": [
-		"./resources/js/Pages/roles/index.vue",
-		"resources_js_Pages_roles_index_vue"
-	],
-	"./roles/index.vue": [
-		"./resources/js/Pages/roles/index.vue",
-		"resources_js_Pages_roles_index_vue"
-	],
-	"./users": [
-		"./resources/js/Pages/users/index.vue",
-		"resources_js_Pages_users_index_vue"
-	],
-	"./users/": [
-		"./resources/js/Pages/users/index.vue",
-		"resources_js_Pages_users_index_vue"
-	],
-	"./users/index": [
-		"./resources/js/Pages/users/index.vue",
-		"resources_js_Pages_users_index_vue"
-	],
-	"./users/index.vue": [
-		"./resources/js/Pages/users/index.vue",
-		"resources_js_Pages_users_index_vue"
-	],
-	"./users/register": [
-		"./resources/js/Pages/users/register.vue",
-		"resources_js_Pages_users_register_vue"
-	],
-	"./users/register.vue": [
-		"./resources/js/Pages/users/register.vue",
-		"resources_js_Pages_users_register_vue"
 	]
 };
 function webpackAsyncContext(req) {
@@ -38120,7 +37960,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_auth_login_vue":1,"resources_js_Pages_company_index_vue":1,"resources_js_Pages_components_error_vue":1,"resources_js_Pages_components_errors_vue":1,"resources_js_Pages_components_message_vue":1,"resources_js_Pages_components_vue-pagination_vue":1,"resources_js_Pages_home_vue":1,"resources_js_Pages_layouts_app-layout_vue":1,"resources_js_Pages_layouts_modal-layout_vue":1,"resources_js_Pages_parts_footer_vue":1,"resources_js_Pages_parts_header_vue":1,"resources_js_Pages_parts_nav_vue":1,"resources_js_Pages_places_index_vue":1,"resources_js_Pages_places_waiting-list_vue":1,"resources_js_Pages_roles_index_vue":1,"resources_js_Pages_users_index_vue":1,"resources_js_Pages_users_register_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if (chunkId === "resources_js_Pages_home_vue") return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
