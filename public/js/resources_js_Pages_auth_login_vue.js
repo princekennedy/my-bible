@@ -334,7 +334,11 @@ var render = function() {
                     _vm._v("Don`t have accout?. \n                    "),
                     _c(
                       "inertia-link",
-                      { staticClass: "text-sm", attrs: { href: "/register" } },
+                      {
+                        staticClass:
+                          "text-sm text-blue-300 hover:text-blue-400",
+                        attrs: { href: "/register" }
+                      },
                       [_vm._v("Click here")]
                     )
                   ],
@@ -346,7 +350,7 @@ var render = function() {
                 "button",
                 {
                   staticClass:
-                    "bg-primary block mx-auto text-white text-sm uppercase rounded shadow-md px-6 py-2"
+                    "bg-primary hover:bg-yellow-400 block mx-auto text-white text-sm uppercase rounded shadow-md px-6 py-2"
                 },
                 [_vm._v("Sign in")]
               )

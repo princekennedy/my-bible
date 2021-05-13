@@ -28,10 +28,10 @@
 
                     <div class="mb-4">
                         <label for="remember" class="text-sm text-gray-600">Already have an account?. 
-                            <inertia-link href="/login" class="text-sm ">Click here</inertia-link> 
+                            <inertia-link href="/login" class="text-sm text-blue-300 hover:text-blue-400">Click here</inertia-link> 
                         </label>
                     </div>
-                    <button type="save" class="bg-primary block mx-auto text-white text-sm uppercase rounded shadow-md px-6 py-2">Sign up</button>
+                    <button type="save" class="bg-primary  hover:bg-yellow-400 block mx-auto text-white text-sm uppercase rounded shadow-md px-6 py-2">Sign up</button>
                 </div>
             </div>
         </form>
